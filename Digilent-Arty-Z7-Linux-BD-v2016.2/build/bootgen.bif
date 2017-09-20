@@ -1,0 +1,6 @@
+the_ROM_image:
+{
+	[bootloader] /tmp/tmp.zMRnW3dQNj/zynq_fsbl.elf
+  /tmp/tmp.zMRnW3dQNj/download.bit
+	/tmp/tmp.zMRnW3dQNj/u-boot.elf
+}

@@ -1,0 +1,1 @@
+arch/arm/boot/dts/vexpress-v2p-ca15-tc1.dtb: arch/arm/boot/dts/.vexpress-v2p-ca15-tc1.dtb.dts.tmp /home/yunwu/workspaces/gitworkspace/arty-z7/Arty-Z7-20-Petalinux-boot-from-ext4/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/arch/arm/boot/dts/vexpress-v2m-rs1.dtsi

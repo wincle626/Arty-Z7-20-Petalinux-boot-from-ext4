@@ -1,0 +1,2 @@
+vexpress-v2p-ca5s.o: \
+ /home/yunwu/workspaces/gitworkspace/arty-z7/Arty-Z7-20-Petalinux-boot-from-ext4/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/arch/arm/boot/dts/vexpress-v2p-ca5s.dts

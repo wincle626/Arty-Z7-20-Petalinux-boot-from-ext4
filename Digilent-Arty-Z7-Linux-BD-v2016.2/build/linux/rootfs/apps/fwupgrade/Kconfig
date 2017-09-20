@@ -1,0 +1,15 @@
+###############################################################################
+# Please modify this file if you want to configure your own application.
+# You can uncommon and/or change the following Kconfig elements.
+###############################################################################
+
+
+if APPS_FWUPGRADE
+	comment "No additional options for FW_UPGRADE"
+
+ 	config APPS_FW_UPGRADE_BUSBYBOX
+	def_bool y
+	depends on PACKAGES_BUSYBOX
+#	help
+#	  Help text
+endif

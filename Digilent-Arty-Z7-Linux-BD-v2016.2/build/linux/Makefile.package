@@ -1,0 +1,259 @@
+ifndef PROOT
+$(errpr Failed to package, no project directory is specified!)
+endif
+
+ifndef INSTANCE
+$(error Failed to package, no instance is specified!)
+endif
+
+ifndef SUBSYSTEM
+$(error Failed to package, no subsystem is specified!)
+endif
+
+include $(PROOT)/build/$(SUBSYSTEM)/Makefile.export
+
+ifndef ROOTFS
+$(error Failed to package $(SUBSYSTEM), no rootfs is specified!)
+endif
+
+ifndef LINUX_KERNEL
+$(error Failed to package $(SUBSYSTEM), no linux kernel is specified!)
+endif
+
+ifndef DTB
+$(error Failed to package $(SUBSYSTEM), no DTB is specified!)
+endif
+
+include $(PROOT)/build/$(ROOTFS)/Makefile.export
+
+include $(PETALINUX)/etc/build/common.mk
+
+ifndef TARGETDIR
+$(error Failed to package $(SUBSYSTEM), no target root directory is specified!)
+endif
+
+get-package-kernel-availables:
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_ARM=y" "$(SUBSYSTEM_CONFIG)"),)
+package-kernel-zImage:
+	@$(call do_info,"package zImage")
+	make INSTANCE=$(LINUX_KERNEL) -C $(PROOT)/build/$(LINUX_KERNEL) zImage_only install
+	if [ -f $(PROOT)/build/$(LINUX_KERNEL)/boot/zImage ]; then \
+		cp $(PROOT)/build/$(LINUX_KERNEL)/boot/zImage $(IMAGEROOT)/; \
+	fi
+
+package-kernel-default: package-kernel-zImage
+endif
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_AARCH64=y" "$(SUBSYSTEM_CONFIG)"),)
+package-kernel-Image:
+	@$(call do_info,"package Image")
+	make INSTANCE=$(LINUX_KERNEL) -C $(PROOT)/build/$(LINUX_KERNEL) Image_only install
+	if [ -f $(PROOT)/build/$(LINUX_KERNEL)/boot/Image ]; then \
+		cp $(PROOT)/build/$(LINUX_KERNEL)/boot/Image $(IMAGEROOT)/; \
+	fi
+
+package-kernel-default: package-kernel-Image
+endif
+
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_AARCH64=y" "$(SUBSYSTEM_CONFIG)"),)
+package-kernel-uImage: package-kernel-Image
+endif
+package-kernel-uImage:
+	@$(call do_info,"package uImage")
+	@kernel_loadaddr_sysconf=$(shell grep -e "^CONFIG_SUBSYSTEM_KERNEL_BASE_ADDRESS=" "$(SUBSYSTEM_CONFIG)" | cut -d "=" -f 2 ); \
+	kernel_loadaddr=$(UIMAGE_LOADADDR); \
+	if [ "$(ARCH)" == "arm" ]; then \
+		if [ -z "$${kernel_loadaddr}" ]; then \
+			kernel_loadaddr=$$(($${kernel_loadaddr_sysconf}+0x8000)); \
+		fi; \
+		uimage_target=uImage_only; \
+		uimage_name=uImage; \
+	elif [ "$(ARCH)" == "microblaze" ]; then \
+		uimage_target=linux.bin.ub_only; \
+		uimage_name=linux.bin.ub; \
+	elif [ "$(ARCH)" == "aarch64" ]; then \
+		if [ -z "$${kernel_loadaddr}" ]; then \
+			kernel_loadaddr=$$(($${kernel_loadaddr_sysconf}+0x80000)); \
+		fi; \
+	fi; \
+	kernel_loadaddr=$$(printf "0x%x" $$(($${kernel_loadaddr}))); \
+	if [ "$(ARCH)" == "aarch64" ]; then \
+		mkimage -A arm64 -O linux -T kernel -C none -a $${kernel_loadaddr} -e $${kernel_loadaddr} -d "$(PROOT)/build/$(LINUX_KERNEL)/boot/Image" $(IMAGEROOT)/uImage \
+		|| exit 255; \
+	else \
+		make INSTANCE=$(LINUX_KERNEL) UIMAGE_LOADADDR=$${kernel_loadaddr} -C $(PROOT)/build/$(LINUX_KERNEL) $${uimage_target} install || exit 255; \
+		if [ -f $(PROOT)/build/$(LINUX_KERNEL)/boot/$${uimage_name} ]; then \
+			cp $(PROOT)/build/$(LINUX_KERNEL)/boot/$${uimage_name} $(IMAGEROOT)/; \
+		fi; \
+	fi
+
+create-image-linux-dir:
+	[ -d "$(PROOT)/images/linux/" ] || mkdir -p "$(PROOT)/images/linux/"
+
+copy-hdf-bitstream: create-image-linux-dir
+	@$(call do_info,"Package HDF bitstream")
+	hdf_file="${PROOT}/subsystems/linux/hw-description/system.hdf"; \
+	if [ -f "$${hdf_file}" ]; then \
+		bit_file=$$(petalinux-util --find-hdf-bitstream --hdf-file "$${hdf_file}"); \
+		if [ -n "$${bit_file}" ]; then \
+			unzip -o "$${hdf_file}" "$${bit_file}" -d "${PROOT}/images/linux/" > /dev/null; \
+		fi; \
+	else \
+		$(call do_info,"No HDF is provided. Skip packaging bitstream."); \
+	fi
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_MICROBLAZE=y" "$(SUBSYSTEM_CONFIG)"),)
+package-kernel-simpleImage.mb: $(PROOT)/build/$(LINUX_KERNEL)/boot $(DTB)
+	@$(call do_info,"package simpleImage.mb")
+	kernel_loadaddr=$(shell grep -e "^CONFIG_SUBSYSTEM_KERNEL_BASE_ADDRESS=" "$(SUBSYSTEM_CONFIG)" | cut -d "=" -f 2 ); \
+	mkdir -p $(PROOT)/build/$(LINUX_KERNEL)/boot/dts; \
+	cp "$(DTB)" $(PROOT)/build/$(LINUX_KERNEL)/boot/dts/mb.dtb; \
+	cp "$(DTB)" $(PROOT)/build/$(LINUX_KERNEL)/boot/mb.dtb; \
+	make INSTANCE=$(LINUX_KERNEL) UIMAGE_LOADADDR=$${kernel_loadaddr} -C $(PROOT)/build/$(LINUX_KERNEL) simpleImage.mb_only install || exit 255
+	$(CROSS_COMPILE)strip -K microblaze_start -K arm_start -K _end -K __log_buf -K _fdt_start $(IMAGEROOT)/vmlinux -o $(IMAGEROOT)/image.elf
+
+package-kernel-default: package-kernel-simpleImage.mb
+endif
+
+update-kernel-package: package-rootfs-initramfs
+	@$(call do_info,"Update and install vmlinux image")
+	make INSTANCE=$(LINUX_KERNEL) -C $(PROOT)/build/$(LINUX_KERNEL) vmlinux_only install || exit 255
+
+generate-image-elf:
+	$(CROSS_COMPILE)strip -K microblaze_start -K arm_start -K _end -K __log_buf -K _fdt_start $(IMAGEROOT)/vmlinux -o $(IMAGEROOT)/image.elf
+
+package-kernel-Image package-kernel-zImage package-kernel-uImage package-kernel-simpleImage.mb : generate-image-elf
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_INITRAMFS=y" "$(SUBSYSTEM_CONFIG)"),)
+package-kernel-Image package-kernel-zImage package-kernel-uImage package-kernel-simpleImage.mb : update-kernel-package
+generate-image-elf: update-kernel-package
+endif
+
+get-package-rootfs-available:
+	echo "jffs2 initramfs nfsroot"
+
+package-rootfs-jffs2:
+	@$(call do_info, "package rootfs.jffs2 to $(IMAGEROOT)")
+	petalinux-gen-jffs2 -d $(TARGETDIR) -o "$(IMAGEROOT)/rootfs.jffs2" --sysconfig "$(SUBSYSTEM_CONFIG)"
+
+package-rootfs-cpio:
+	@$(call do_info,"package rootfs.cpio to $(IMAGEROOT)")
+	if grep -q -e "^CONFIG_ROOTFS_PACKAGES.*SMARTPM=y"  "$(ROOTFS_CONFIG)" 2>/dev/null; then \
+		nosmart=""; \
+	else \
+		nosmart="--no-smart-rpm"; \
+	fi; \
+	petalinux-gen-initrd -d $(TARGETDIR) -o "$(IMAGEROOT)/rootfs.cpio" --linux-build "$(PROOT)/build/$(LINUX_KERNEL)" --initcpio "$(CURDIR)/rootfs_init_cpio_file" $${nosmart} || exit 255
+	gzip -c "$(IMAGEROOT)/rootfs.cpio" > "$(IMAGEROOT)/rootfs.cpio.gz" || exit 255
+	if [ "$(ARCH)" == "aarch64" ]; then \
+		uboot_mkimage_arch="arm64"; \
+	else \
+		uboot_mkimage_arch="$(ARCH)"; \
+	fi; \
+	mkimage -A $${uboot_mkimage_arch} -T ramdisk -O linux -C gzip -d "$(IMAGEROOT)/rootfs.cpio.gz" "$(IMAGEROOT)/urootfs.cpio.gz" || exit 255
+
+package-rootfs-initramfs:package-rootfs-cpio
+	fsize=$$(stat -c "%s" "$(IMAGEROOT)/rootfs.cpio" 2>/dev/null); \
+	if [ "$$(($${fsize}))" -gt $$((512*1024*1024)) ]; then \
+		$(call do_info,"RootFS size is larger than 512MB, please consider other rootfs type instead of initramfs."); \
+	fi
+
+package-rootfs-nfsroot:
+	@$(call do_info,"package nfsroot")
+	petalinux-gen-nfsroot -d $(TARGETDIR) --sysconfig "$(SUBSYSTEM_CONFIG)" || exit 255
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_INITRAMFS=y" "$(SUBSYSTEM_CONFIG)"),)
+package-rootfs-default:package-rootfs-initramfs
+else
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_INITRD=y" "$(SUBSYSTEM_CONFIG)"),)
+package-rootfs-default:package-rootfs-cpio
+else
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_JFFS2=y" "$(SUBSYSTEM_CONFIG)"),)
+package-rootfs-default:package-rootfs-jffs2
+else
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_NFS=y" "$(SUBSYSTEM_CONFIG)"),)
+package-rootfs-default:package-rootfs-nfsroot
+else
+package-rootfs-default:
+endif
+endif
+endif
+endif
+
+package-subsystem:package-kernel-default package-subsystem-default package-rootfs-default copy-hdf-bitstream
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_COPY_TO_TFTPBOOT=y" "$(SUBSYSTEM_CONFIG)"),)
+	tftpboot=$$(grep -e "^CONFIG_SUBSYSTEM_TFTPBOOT_DIR=" "$(SUBSYSTEM_CONFIG)" | awk -F "=" '{print $$2}' | tr -d '"'); \
+	if [ "$${TFTPDIR_DISABLE}" != "TRUE" ]; then \
+		rsync -a "$(IMAGEROOT)"/* "$${tftpboot}/"; \
+		if [ ! $$? -eq 0 ]; then \
+			$(call do_info,"Failed to copy images to TFTPBOOT $${tftpboot}"); \
+		fi; \
+	fi
+endif
+
+$(IMAGEROOT)/vmlinux:package-kernel-default
+
+package-subsystem-default:package-subsystem-FIT
+
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ROOTFS_INITRD=y" "$(SUBSYSTEM_CONFIG)"),)
+package-subsystem-FIT: package-rootfs-initramfs
+endif
+
+package-subsystem-FIT: package-kernel-default $(IMAGEROOT)/vmlinux $(DTB)
+	kernel_loadaddr=$$(grep -e "^CONFIG_SUBSYSTEM_MEMORY_.*_KERNEL_BASEADDR=" "$(SUBSYSTEM_CONFIG)" | head -n1 | cut -d "=" -f 2 ); \
+	[ ! -z "$${kernel_loadaddr}" ] && kernel_loadaddr="--kernel_loadaddr $${kernel_loadaddr}"; \
+	uimage=$$(grep -e "^CONFIG_SUBSYSTEM_UIMAGE_NAME=" "$(SUBSYSTEM_CONFIG)" | awk -F "=" '{print $$2}' | tr -d '"'); \
+	if [ -z "$${uimage}" ]; then \
+		uimage=image.ub; \
+	fi; \
+	kernel_compression=$$(grep -e "^CONFIG_SUBSYSTEM_COMPRESS_IMAGE=y" "$(SUBSYSTEM_CONFIG)"); \
+	if [ ! -z "$${kernel_compression}" ]; then \
+		kernel_compression="gzip"; \
+	else \
+		kernel_compression="none"; \
+	fi; \
+	kern_hash=$$(grep -e "^CONFIG_SUBSYSTEM_UIMAGE_HASH_.*=y" "$(SUBSYSTEM_CONFIG)" | awk -F "=" '{print $$1}' | sed "s/CONFIG_SUBSYSTEM_UIMAGE_HASH_//g" | tr '[:upper:]' '[:lower:]'); \
+	ramdisk=$$(grep -e "^CONFIG_SUBSYSTEM_RAMDISK_IMAGE=" "$(SUBSYSTEM_CONFIG)" | cut -d "=" -f 2 ); \
+	if [ ! -z "$${ramdisk}" ]; then \
+		ramdisk=$$(eval echo "$${ramdisk}"); \
+		ramdisk="--ramdisk \"$${ramdisk}\""; \
+	fi; \
+	ramdisk_loadaddr=$$(grep -e "^CONFIG_SUBSYSTEM_INITRD_RAMDISK_LOADADDR=" "$(SUBSYSTEM_CONFIG)" | head -n1 | cut -d "=" -f 2 ); \
+	if [ ! -z "$${ramdisk_loadaddr}" ]; then \
+		ramdisk_loadaddr="--ramdisk_loadaddr $${ramdisk_loadaddr}"; \
+	fi; \
+	eval petalinux-gen-fitimage --kernel $(IMAGEROOT)/vmlinux --dtb "$(DTB)" $${kernel_loadaddr} --output $(IMAGEROOT)/$${uimage} --kernel_compression $${kernel_compression} --kernel_hash $${kern_hash} $${ramdisk} $${ramdisk_loadaddr} --kernelconfig "$(LINUX_CONFIG)"
+
+ifeq ($(shell grep -e "^CONFIG_SUBSYSTEM_COMPONENT_U__BOOT_NAME_NONE=y" "$(SUBSYSTEM_CONFIG)"),)
+ifeq ($(PLNX_SUBSYSTEM_ARCH),microblaze)
+package-subsystem: relocate-uboot
+relocate-uboot:$(IMAGEROOT)/u-boot.elf
+	petalinux-reloc-blob -l 0 -i $< -o $(IMAGEROOT)/u-boot-s
+endif
+endif
+
+package-get-available-components:
+	echo "PACKAGEABLE_COMPONENT: kernel"
+	echo "PACKAGEABLE_COMPONENT: rootfs"
+
+package-get-available-format:
+	echo "IMAGE FORMAT: FIT"
+
+package-kernel-get-available-format:
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_ARM=y" "$(SUBSYSTEM_CONFIG)"),)
+	echo "IMAGE FORMAT: zImage"
+endif
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_AARCH64=y" "$(SUBSYSTEM_CONFIG)"),)
+	echo "IMAGE FORMAT: Image"
+endif
+	echo "IMAGE FORMAT: uImage"
+ifneq ($(shell grep -e "^CONFIG_SUBSYSTEM_ARCH_MICROBLAZE=y" "$(SUBSYSTEM_CONFIG)"),)
+	echo "IMAGE FORMAT: simpleImage.mb"
+endif
+
+package-rootfs-get-available-format:
+	echo "IMAGE FORMAT: initramfs"
+	echo "IMAGE FORMAT: jffs2"
+	echo "IMAGE FORMAT: nfsroot"

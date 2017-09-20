@@ -1,0 +1,27 @@
+ROOTFS=linux/rootfs
+ROOTFS_CONFIG=$(PROOT)/subsystems/linux/configs/rootfs/config
+TARGETDIR=$(PROOT)/build/$(ROOTFS)/targetroot
+ifeq ($(shell grep -e "^[[:space:]]*CONFIG_USER_DEBUG=" $(ROOTFS_CONFIG) 2>/dev/null),)
+ROOTFS_NOT_STRIP:=
+else
+ROOTFS_NOT_STRIP:=y
+endif
+ifeq ($(ROOTFS_NOT_STRIP),)
+TARGETINST=$(PETALINUX)/components/rootfs/targetroot-inst.sh
+else
+TARGETINST=$(PETALINUX)/components/rootfs/targetroot-inst.sh -S
+endif
+STAGEDIR=$(PROOT)/build/$(ROOTFS)/stage
+ROOTFS_CONFIG_CHANGED=$(PROOT)/build/$(ROOTFS)/config_checksum
+
+postprocess_multiarch = \
+	multiarch=$$($(CROSS_COMPILE)gcc --print-multiarch | tr -d " "); \
+	if [ -z "$${multiarch}" ]; then \
+		return; \
+	fi; \
+	for d in lib include usr/lib usr/include usr/local/lib usr/local/include; do \
+		if [ -d "$(1)/$${d}" ] && [ ! -e "$(1)/$${d}/$${multiarch}" ]; then \
+			ln -s "../$$(basename $${d})" "$(1)/$${d}/$${multiarch}"; \
+		fi; \
+	done
+

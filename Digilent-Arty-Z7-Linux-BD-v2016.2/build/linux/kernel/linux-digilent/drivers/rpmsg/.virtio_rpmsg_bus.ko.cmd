@@ -1,0 +1,1 @@
+cmd_drivers/rpmsg/virtio_rpmsg_bus.ko := arm-linux-gnueabihf-ld -EL -r  -T /home/yunwu/workspaces/gitworkspace/arty-z7/Arty-Z7-20-Petalinux-boot-from-ext4/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/scripts/module-common.lds --build-id  -o drivers/rpmsg/virtio_rpmsg_bus.ko drivers/rpmsg/virtio_rpmsg_bus.o drivers/rpmsg/virtio_rpmsg_bus.mod.o

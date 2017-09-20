@@ -1,0 +1,120 @@
+#!/bin/sh
+# set -x
+
+# Usage: upgrade-firmware [-tmp ] [-nocheck] [-web port] <tarfile>|<url> ...
+
+check=1
+opts=""
+
+FW_UPGRADE=/bin/fwupgrade
+
+while [ $# -ne 1 ]; do
+case "$1" in
+	-tmp)
+		cp /bin/fwupgrade /tmp
+		FW_UPGRADE=/tmp/fwupgrade
+		shift
+		;;
+
+	-nocheck)
+		check=0
+		shift
+		;;
+
+	-web)
+		opts="-web $2"
+		shift
+		shift
+		;;
+
+	*)
+		echo "Usage: upgrade-firmware [-nocheck] [-web port] <tarfile>|<url>"
+		exit 1
+		;;
+esac
+done
+
+rm -rf /tmp/fw
+mkdir -p /tmp/fw
+
+case "$1" in
+http://*)
+	wget -O /tmp/upgrade.tar "$1"
+	if [ $? -ne 0 ]; then
+		echo "Error: Failed to download: $1"
+		exit 1
+	fi
+	tarfile="/tmp/upgrade.tar"
+	;;
+*)
+	tarfile="$1"
+	;;
+esac
+shift
+
+trap "rm -rf /tmp/fw" EXIT
+
+test -f "$tarfile" && tar -C /tmp/fw -xzf "$tarfile"
+rc=$?
+rm -f /tmp/upgrade.tar
+if [ $rc -ne 0 ]; then
+	echo "Error: Not a valid firmware image"
+	exit 1
+fi
+
+cd /tmp/fw
+
+# check if the firmware package is valid, should have one of the following: pre-upgrade.sh or manifest.dat
+ok=0
+[ -f manifest.dat ] && ok=1
+[ -f pre-upgrade.sh ] && ok=1
+
+test $ok -eq 1 && test -f MD5SUMS && md5sum -c MD5SUMS 1>&2
+if [ $? -ne 0 ]; then
+	echo "Error: Firmware image is corrupt"
+	exit 1
+fi
+
+#check if the product matched, check the file 'product' against '/etc/product'
+if [ $check -ne 0 -a -f product -a -f /etc/product ]; then
+	grep "^$(cat /etc/product)$" product 2>&1 > /dev/null
+	if [ $? -ne 0 ]; then
+		echo "Error: Firmware for product $(cat /etc/product) is needed, while this is $(cat product)"
+		exit 1
+	fi
+fi
+
+newversion=unknown
+if [ -f version ]; then
+	newversion=`cat version`
+fi
+oldversion=`cat /etc/version`
+
+while read line; do
+	part=$(echo $line | cut -d ':' -f 1)
+	file=$(echo $line | cut -d ':' -f 2-)
+	if [ ! -e ${part} ]; then
+		echo "ERROR: Invalid firmware image.  Flash partition ${part} does not exist"
+		exit 1
+	fi
+	if [ ! -e ${file} ]; then
+		echo "ERROR: Invalid firmware image.  Firmware component ${file} does not exist"
+		exit 1
+	fi
+	[ -n "${file}" ] && opts="$opts ${part} ${file}"
+done < manifest.dat
+
+touch /var/run/upgrading
+
+echo "Updating: From $oldversion to $newversion"
+
+# At this point close stdout to signal the web interface
+# that all is proceeding well
+exec 1>&2
+
+# If the pre-upgrade.sh script exists, run it.
+[ -f pre-upgrade.sh ] && sh pre-upgrade.sh
+
+exec ${FW_UPGRADE} $opts
+
+[ -f post-upgrade.sh ] && sh post-upgrade.sh

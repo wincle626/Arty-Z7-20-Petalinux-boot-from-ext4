@@ -1,0 +1,24 @@
+SUBSYSTEM=linux
+CONFIGROOT=$(PROOT)/subsystems/$(SUBSYSTEM)/configs
+HW_DESCRIPTION=$(PROOT)/subsystems/$(SUBSYSTEM)/hw-description
+SUBSYSTEM_CONFIG=$(PROOT)/subsystems/$(SUBSYSTEM)/config
+LINUX_KERNEL=$(SUBSYSTEM)/kernel
+LINUX_CONFIG=$(CONFIGROOT)/kernel/config
+ROOTFS=$(SUBSYSTEM)/rootfs
+ROOTFS_CONFIG=$(CONFIGROOT)/rootfs/config
+UBOOT=$(SUBSYSTEM)/u-boot
+UBOOT_CONFIGDIR=$(CONFIGROOT)/u-boot
+UBOOT_CONFIG=$(UBOOT_CONFIGDIR)/config
+DTS_DIR=$(CONFIGROOT)/device-tree
+DTB=$(PROOT)//build/$(SUBSYSTEM)/device-tree/system.dtb
+IMAGEROOT=$(PROOT)/images/$(SUBSYSTEM)
+ifneq ($(shell if [ -f $(HW_DESCRIPTION)/system.hdf ]; then echo "y"; else echo ""; fi),)
+SYSTEM_HDF=$(HW_DESCRIPTION)/system.hdf
+else
+ifneq ($(shell if [ -f $(HW_DESCRIPTION)/system.xml ]; then echo "y"; else echo ""; fi),)
+SYSTEM_HDF=$(HW_DESCRIPTION)/system.xml
+else
+SYSTEM_HDF=
+$(warn "No Hardware description file in $(HW_DESCRIPTION)/.")
+endif
+endif

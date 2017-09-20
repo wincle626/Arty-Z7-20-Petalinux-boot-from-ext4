@@ -1,0 +1,10 @@
+# Interfaces file for NFS root
+# interfaces are brought up and configured
+# by kernel autoconfiguration, so don't mess
+# with them in ifup/ifdown
+auto lo
+iface lo inet manual
+#
+auto eth0
+iface eth0 inet manual
+

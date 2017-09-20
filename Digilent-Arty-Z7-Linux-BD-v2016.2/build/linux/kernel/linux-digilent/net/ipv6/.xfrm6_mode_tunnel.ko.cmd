@@ -1,0 +1,1 @@
+cmd_net/ipv6/xfrm6_mode_tunnel.ko := arm-linux-gnueabihf-ld -EL -r  -T /home/yunwu/workspaces/gitworkspace/arty-z7/Arty-Z7-20-Petalinux-boot-from-ext4/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/scripts/module-common.lds --build-id  -o net/ipv6/xfrm6_mode_tunnel.ko net/ipv6/xfrm6_mode_tunnel.o net/ipv6/xfrm6_mode_tunnel.mod.o
