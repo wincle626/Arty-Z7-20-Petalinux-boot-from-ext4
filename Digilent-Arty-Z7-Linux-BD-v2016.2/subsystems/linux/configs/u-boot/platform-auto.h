@@ -71,7 +71,7 @@
 #define CONFIG_NET_MULTI
 #define CONFIG_BOOTP_MAY_FAIL
 #define CONFIG_NETCONSOLE	1
-#define CONFIG_SERVERIP	10.0.3.1
+#define CONFIG_SERVERIP	10.42.0.1
 #define CONFIG_IPADDR
 
 /* spi_flash - ps7_qspi_0 */
