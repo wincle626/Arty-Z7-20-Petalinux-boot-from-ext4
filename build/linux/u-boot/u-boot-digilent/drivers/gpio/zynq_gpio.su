@@ -1,8 +1,0 @@
-zynq_gpio.c:195:12:check_gpio	8	static
-zynq_gpio.c:302:12:zynq_gpio_get_function	16	static
-zynq_gpio.c:221:12:zynq_gpio_set_value	24	static
-zynq_gpio.c:204:12:zynq_gpio_get_value	16	static
-zynq_gpio.c:252:12:zynq_gpio_direction_input	16	static
-zynq_gpio.c:275:12:zynq_gpio_direction_output	24	static
-zynq_gpio.c:375:12:zynq_gpio_ofdata_to_platdata	16	static
-zynq_gpio.c:362:12:zynq_gpio_probe	24	static

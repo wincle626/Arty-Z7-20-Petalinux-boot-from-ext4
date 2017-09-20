@@ -1,1 +1,0 @@
-cmd_arch/arm/mach-vexpress/built-in.o :=  arm-linux-gnueabihf-ld -EL    -r -o arch/arm/mach-vexpress/built-in.o arch/arm/mach-vexpress/v2m.o arch/arm/mach-vexpress/platsmp.o arch/arm/mach-vexpress/hotplug.o 

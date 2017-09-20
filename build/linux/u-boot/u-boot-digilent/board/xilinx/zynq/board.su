@@ -1,5 +1,0 @@
-board.c:33:5:board_init	8	static
-board.c:75:5:board_late_init	8	static
-board.c:96:5:checkboard	8	static
-board.c:103:5:zynq_board_read_rom_ethaddr	16	static
-board.c:260:5:dram_init	8	static

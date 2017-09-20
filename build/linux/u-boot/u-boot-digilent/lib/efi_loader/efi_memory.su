@@ -1,8 +1,0 @@
-efi_memory.c:43:12:efi_mem_cmp	0	static
-efi_memory.c:214:17:efi_find_free_memory	48	static
-efi_memory.c:125:10:efi_add_memory_map	104	static
-efi_memory.c:250:14:efi_allocate_pages	32	static
-efi_memory.c:300:7:efi_alloc	24	static
-efi_memory.c:313:14:efi_free_pages	0	static
-efi_memory.c:319:14:efi_get_memory_map	16	static
-efi_memory.c:358:5:efi_memory_init	32	static

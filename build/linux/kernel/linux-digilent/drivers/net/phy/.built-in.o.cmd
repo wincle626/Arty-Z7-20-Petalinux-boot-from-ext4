@@ -1,1 +1,0 @@
-cmd_drivers/net/phy/built-in.o :=  arm-linux-gnueabihf-ld -EL    -r -o drivers/net/phy/built-in.o drivers/net/phy/libphy.o drivers/net/phy/marvell.o drivers/net/phy/vitesse.o drivers/net/phy/realtek.o drivers/net/phy/mdio-bitbang.o 
