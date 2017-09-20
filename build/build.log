@@ -1,0 +1,754 @@
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Nothing to be done for 'pre-build'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[INFO ] generate linux/u-boot configuration files
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent -j5 zynq_zc702_config || exit 255
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ] #
+[ALL  ] # configuration written to .config
+[ALL  ] #
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent'
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config" ]; then 	cp "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config" /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config; else 	if [ ! -d "$(dirname /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config)" ]; then 		mkdir -p "$(dirname /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config)"; 	fi; 	cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config"; fi
+[INFO ] update linux/u-boot source
+[ALL  ] if [ ! -d "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent" ]; then 	mkdir -p "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"; fi; if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent/.gitignore" ]; then 	grep -v -e "^#" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent/.gitignore" > u_boot_source_exclude; else 	echo "" > u_boot_source_exclude; fi; rsync -a --exclude-from=u_boot_source_exclude --filter=':C .git/ RCS SCCS CVS CVS.adm RCSLOG cvslog.* *.o' "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent"/ "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"/
+[ALL  ] chmod -R a+w "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"/include/configs "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/board/xilinx/zynq"
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config.mk" ]; then 	rsync "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config.mk"  "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/board/xilinx/zynq/config.mk"; fi
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/platform-top.h" ]; then 	rsync "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot"/*.h "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs"/; 	uboot_sysconf_plat=`grep -e "^CONFIG_SYS_CONFIG_NAME=" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config" | sed -e "s/.*=\"\(.*\)\"/\1/g"`; 	if [ ! -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/${uboot_sysconf_plat}.h" ]; then 		echo "ERROR: failed to get the u-boot sys config."; 		exit 255; 	fi; 	mv "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/platform-top.h" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/${uboot_sysconf_plat}.h"; fi
+[INFO ] build linux/u-boot
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent -j5 oldconfig || exit 255
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   HOSTCC  scripts/basic/fixdep
+[ALL  ]   HOSTCC  scripts/kconfig/conf.o
+[ALL  ]   HOSTCC  scripts/kconfig/zconf.tab.o
+[ALL  ]   HOSTLD  scripts/kconfig/conf
+[ALL  ] scripts/kconfig/conf  --oldconfig Kconfig
+[ALL  ] #
+[ALL  ] # configuration written to .config
+[ALL  ] #
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent -j5 EXT_DTB=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2//build/linux/device-tree/system.dtb all
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ] scripts/kconfig/conf  --silentoldconfig Kconfig
+[ALL  ]   CHK     include/config.h
+[ALL  ]   GEN     include/autoconf.mk
+[ALL  ]   GEN     include/autoconf.mk.dep
+[ALL  ]   CHK     include/config/uboot.release
+[ALL  ]   CHK     include/generated/timestamp_autogenerated.h
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   UPD     include/generated/timestamp_autogenerated.h
+[ALL  ]   Using /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent as source for U-Boot
+[ALL  ]   CHK     include/generated/version_autogenerated.h
+[ALL  ]   CC      lib/asm-offsets.s
+[ALL  ]   CC      arch/arm/lib/asm-offsets.s
+[ALL  ]   CHK     include/generated/generic-asm-offsets.h
+[ALL  ]   CHK     include/generated/asm-offsets.h
+[ALL  ]   HOSTCC  tools/envcrc.o
+[ALL  ]   HOSTCC  tools/common/env_embedded.o
+[ALL  ]   HOSTCC  tools/mkenvimage.o
+[ALL  ]   HOSTCC  tools/fit_image.o
+[ALL  ]   HOSTCC  tools/image-host.o
+[ALL  ]   HOSTCC  tools/dumpimage.o
+[ALL  ]   HOSTCC  tools/mkimage.o
+[ALL  ]   HOSTLD  tools/envcrc
+[ALL  ]   HOSTLD  tools/mkenvimage
+[ALL  ]   HOSTLD  tools/dumpimage
+[ALL  ]   HOSTLD  tools/fit_info
+[ALL  ]   HOSTLD  tools/fit_check_sign
+[ALL  ]   HOSTLD  tools/mkimage
+[ALL  ]   CC      board/xilinx/zynq/board.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cache_v7.o
+[ALL  ]   CC      arch/arm/mach-zynq/timer.o
+[ALL  ]   AS      arch/arm/lib/vectors.o
+[ALL  ]   AS      arch/arm/lib/crt0.o
+[ALL  ]   AS      arch/arm/lib/relocate.o
+[ALL  ]   CC      arch/arm/lib/bootm-fdt.o
+[ALL  ]   CC      arch/arm/mach-zynq/cpu.o
+[ALL  ]   AS      arch/arm/cpu/armv7/cache_v7_asm.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cpu.o
+[ALL  ]   LD      board/xilinx/zynq/built-in.o
+[ALL  ]   CC      arch/arm/lib/bootm.o
+[ALL  ]   CC      arch/arm/mach-zynq/ddrc.o
+[ALL  ]   CC      cmd/boot.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cp15.o
+[ALL  ]   CC      arch/arm/cpu/armv7/syslib.o
+[ALL  ]   CC      arch/arm/mach-zynq/slcr.o
+[ALL  ]   CC      arch/arm/lib/stack.o
+[ALL  ]   CC      cmd/bootm.o
+[ALL  ]   CC      cmd/help.o
+[ALL  ]   AS      arch/arm/cpu/armv7/start.o
+[ALL  ]   LD      arch/arm/cpu/armv7/built-in.o
+[ALL  ]   CC      cmd/version.o
+[ALL  ]   CC      arch/arm/lib/interrupts.o
+[ALL  ]   CC      arch/arm/mach-zynq/clk.o
+[ALL  ]   AS      arch/arm/mach-zynq/lowlevel_init.o
+[ALL  ]   CC      arch/arm/lib/reset.o
+[ALL  ]   CC      arch/arm/lib/cache.o
+[ALL  ]   CC      cmd/source.o
+[ALL  ]   CC      disk/part.o
+[ALL  ]   CC      arch/arm/lib/cache-cp15.o
+[ALL  ]   CC      cmd/bdinfo.o
+[ALL  ]   LD      arch/arm/mach-zynq/built-in.o
+[ALL  ]   AS      arch/arm/lib/ashldi3.o
+[ALL  ]   AS      arch/arm/lib/ashrdi3.o
+[ALL  ]   AS      arch/arm/lib/div64.o
+[ALL  ]   CC      cmd/bootefi.o
+[ALL  ]   AS      arch/arm/lib/lib1funcs.o
+[ALL  ]   CC      common/init/board_init.o
+[ALL  ]   AS      arch/arm/lib/lshrdi3.o
+[ALL  ]   CC      drivers/block/blk_legacy.o
+[ALL  ]   CC      disk/part_dos.o
+[ALL  ]   AS      arch/arm/lib/muldi3.o
+[ALL  ]   AS      arch/arm/lib/uldivmod.o
+[ALL  ]   CC      arch/arm/lib/eabi_compat.o
+[ALL  ]   LD      common/init/built-in.o
+[ALL  ]   CC      common/main.o
+[ALL  ]   CC      cmd/cache.o
+[ALL  ]   CC      common/exports.o
+[ALL  ]   LD      arch/arm/lib/built-in.o
+[ALL  ]   AR      arch/arm/lib/lib.a
+[ALL  ]   CC      common/hash.o
+[ALL  ]   LD      drivers/block/built-in.o
+[ALL  ]   LD      disk/built-in.o
+[ALL  ]   CC      cmd/clk.o
+[ALL  ]   CC      drivers/crypto/fsl/sec.o
+[ALL  ]   CC      drivers/core/device.o
+[ALL  ]   CC      drivers/core/lists.o
+[ALL  ]   LD      drivers/crypto/fsl/built-in.o
+[ALL  ]   CC      drivers/crypto/rsa_mod_exp/mod_exp_uclass.o
+[ALL  ]   CC      cmd/console.o
+[ALL  ]   CC      common/cli_hush.o
+[ALL  ]   CC      drivers/crypto/rsa_mod_exp/mod_exp_sw.o
+[ALL  ]   CC      cmd/echo.o
+[ALL  ]   CC      cmd/eeprom.o
+[ALL  ]   CC      drivers/dfu/dfu.o
+[ALL  ]   LD      drivers/crypto/rsa_mod_exp/built-in.o
+[ALL  ]   LD      drivers/crypto/built-in.o
+[ALL  ]   CC      drivers/dfu/dfu_ram.o
+[ALL  ]   CC      drivers/core/root.o
+[ALL  ]   CC      cmd/elf.o
+[ALL  ]   CC      drivers/fpga/fpga.o
+[ALL  ]   CC      drivers/core/uclass.o
+[ALL  ]   CC      cmd/exit.o
+[ALL  ]   LD      drivers/dfu/built-in.o
+[ALL  ]   CC      cmd/ext4.o
+[ALL  ]   CC      drivers/fpga/zynqpl.o
+[ALL  ]   CC      drivers/fpga/xilinx.o
+[ALL  ]   CC      cmd/ext2.o
+[ALL  ]   CC      cmd/fat.o
+[ALL  ]   CC      common/autoboot.o
+[ALL  ]   CC      cmd/fdt.o
+[ALL  ]   LD      drivers/fpga/built-in.o
+[ALL  ]   CC      cmd/fpga.o
+[ALL  ]   CC      drivers/core/util.o
+[ALL  ]   CC      common/board_f.o
+[ALL  ]   CC      common/board_r.o
+[ALL  ]   CC      cmd/fs.o
+[ALL  ]   CC      drivers/core/device-remove.o
+[ALL  ]   CC      drivers/core/simple-bus.o
+[ALL  ]   CC      cmd/gpio.o
+[ALL  ]   CC      cmd/i2c.o
+[ALL  ]   CC      common/board_info.o
+[ALL  ]   CC      drivers/core/dump.o
+[ALL  ]   CC      common/bootm.o
+[ALL  ]   CC      cmd/itest.o
+[ALL  ]   CC      drivers/gpio/gpio-uclass.o
+[ALL  ]   LD      drivers/core/built-in.o
+[ALL  ]   CC      drivers/gpio/zynq_gpio.o
+[ALL  ]   CC      drivers/input/input.o
+[ALL  ]   CC      cmd/load.o
+[ALL  ]   CC      common/bootm_os.o
+[ALL  ]   CC      common/env_attr.o
+[ALL  ]   CC      drivers/input/key_matrix.o
+[ALL  ]   CC      drivers/i2c/i2c_core.o
+[ALL  ]   CC      common/env_callback.o
+[ALL  ]   LD      drivers/gpio/built-in.o
+[ALL  ]   CC      common/env_flags.o
+[ALL  ]   CC      cmd/mem.o
+[ALL  ]   LD      drivers/input/built-in.o
+[ALL  ]   CC      drivers/i2c/zynq_i2c.o
+[ALL  ]   CC      drivers/pcmcia/tqm8xx_pcmcia.o
+[ALL  ]   CC      common/env_sf.o
+[ALL  ]   LD      drivers/pcmcia/built-in.o
+[ALL  ]   CC      drivers/rtc/date.o
+[ALL  ]   LD      drivers/i2c/built-in.o
+[ALL  ]   CC      common/fdt_support.o
+[ALL  ]   CC      cmd/mii.o
+[ALL  ]   CC      drivers/mmc/mmc-uclass.o
+[ALL  ]   LD      drivers/rtc/built-in.o
+[ALL  ]   CC      common/miiphyutil.o
+[ALL  ]   CC      drivers/video/display-uclass.o
+[ALL  ]   CC      drivers/mmc/mmc_legacy.o
+[ALL  ]   LD      drivers/video/built-in.o
+[ALL  ]   LD      drivers/built-in.o
+[ALL  ]   CC      cmd/mdio.o
+[ALL  ]   CC      drivers/mmc/mmc.o
+[ALL  ]   CC      drivers/mtd/mtdcore.o
+[ALL  ]   CC      drivers/mtd/mtd_uboot.o
+[ALL  ]   CC      cmd/misc.o
+[ALL  ]   CC      cmd/mmc.o
+[ALL  ]   CC      drivers/mmc/sdhci.o
+[ALL  ]   CC      common/usb.o
+[ALL  ]   LD      drivers/mtd/built-in.o
+[ALL  ]   CC      common/usb_hub.o
+[ALL  ]   CC      cmd/net.o
+[ALL  ]   CC      cmd/pcmcia.o
+[ALL  ]   CC      drivers/mmc/zynq_sdhci.o
+[ALL  ]   CC      common/usb_storage.o
+[ALL  ]   CC      common/flash.o
+[ALL  ]   CC      drivers/mmc/mmc_write.o
+[ALL  ]   CC      cmd/sf.o
+[ALL  ]   CC      common/edid.o
+[ALL  ]   CC      cmd/spi.o
+[ALL  ]   LD      drivers/mmc/built-in.o
+[ALL  ]   CC      common/splash.o
+[ALL  ]   CC      common/env_common.o
+[ALL  ]   CC      cmd/test.o
+[ALL  ]   CC      drivers/net/netconsole.o
+[ALL  ]   CC      drivers/mtd/spi/sf-uclass.o
+[ALL  ]   CC      drivers/net/zynq_gem.o
+[ALL  ]   CC      common/console.o
+[ALL  ]   CC      cmd/usb.o
+[ALL  ]   CC      drivers/mtd/spi/sf_probe.o
+[ALL  ]   CC      common/dlmalloc.o
+[ALL  ]   CC      drivers/mtd/spi/spi_flash.o
+[ALL  ]   CC      drivers/mtd/spi/sf_params.o
+[ALL  ]   LD      drivers/net/built-in.o
+[ALL  ]   CC      common/malloc_simple.o
+[ALL  ]   CC      common/image.o
+[ALL  ]   CC      cmd/thordown.o
+[ALL  ]   CC      drivers/mtd/spi/sf.o
+[ALL  ]   CC      cmd/ximg.o
+[ALL  ]   CC      drivers/net/phy/phy.o
+[ALL  ]   CC      drivers/net/phy/marvell.o
+[ALL  ]   CC      cmd/dfu.o
+[ALL  ]   CC      common/image-fdt.o
+[ALL  ]   CC      cmd/nvedit.o
+[ALL  ]   LD      drivers/mtd/spi/built-in.o
+[ALL  ]   CC      cmd/disk.o
+[ALL  ]   CC      common/image-fit.o
+[ALL  ]   CC      common/image-sig.o
+[ALL  ]   CC      common/memsize.o
+[ALL  ]   LD      drivers/net/phy/built-in.o
+[ALL  ]   CC      common/stdio.o
+[ALL  ]   CC      common/cli_simple.o
+[ALL  ]   CC      common/cli.o
+[ALL  ]   CC      common/cli_readline.o
+[ALL  ]   LD      cmd/built-in.o
+[ALL  ]   CC      common/command.o
+[ALL  ]   CC      common/s_record.o
+[ALL  ]   CC      drivers/serial/serial-uclass.o
+[ALL  ]   CC      drivers/spi/spi-uclass.o
+[ALL  ]   CC      drivers/serial/serial_zynq.o
+[ALL  ]   CC      common/xyzModem.o
+[ALL  ]   CC      drivers/spi/zynq_qspi.o
+[ALL  ]   LD      drivers/serial/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/epautoconf.o
+[ALL  ]   CC      drivers/usb/gadget/config.o
+[ALL  ]   CC      drivers/usb/host/ehci-hcd.o
+[ALL  ]   LD      drivers/spi/built-in.o
+[ALL  ]   CC      drivers/usb/host/ehci-zynq.o
+[ALL  ]   LD      common/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/usbstring.o
+[ALL  ]   CC      drivers/usb/gadget/ci_udc.o
+[ALL  ]   CC      drivers/usb/ulpi/ulpi.o
+[ALL  ]   CC      drivers/usb/ulpi/ulpi-viewport.o
+[ALL  ]   SHIPPED dts/dt.dtb
+[ALL  ]   DTB     dts/dt.dtb.S
+[ALL  ]   AS      dts/dt.dtb.o
+[ALL  ]   LD      dts/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/g_dnl.o
+[ALL  ]   CC      drivers/usb/gadget/f_thor.o
+[ALL  ]   LD      drivers/usb/ulpi/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/f_dfu.o
+[ALL  ]   CC      fs/fs.o
+[ALL  ]   LD      drivers/usb/host/built-in.o
+[ALL  ]   CC      fs/ext4/ext4fs.o
+[ALL  ]   CC      net/checksum.o
+[ALL  ]   CC      net/arp.o
+[ALL  ]   LD      drivers/usb/gadget/built-in.o
+[ALL  ]   CC      net/bootp.o
+[ALL  ]   CC      net/eth-uclass.o
+[ALL  ]   CC      lib/efi_loader/efi_image_loader.o
+[ALL  ]   CC      fs/ext4/ext4_common.o
+[ALL  ]   CC      fs/ext4/dev.o
+[ALL  ]   CC      lib/efi_loader/efi_boottime.o
+[ALL  ]   CC      lib/libfdt/fdt.o
+[ALL  ]   CC      lib/rsa/rsa-verify.o
+[ALL  ]   CC      net/eth_common.o
+[ALL  ]   CC      lib/libfdt/fdt_ro.o
+[ALL  ]   CC      lib/rsa/rsa-checksum.o
+[ALL  ]   CC      lib/efi_loader/efi_runtime.o
+[ALL  ]   CC      net/net.o
+[ALL  ]   CC      lib/rsa/rsa-mod-exp.o
+[ALL  ]   CC      lib/libfdt/fdt_rw.o
+[ALL  ]   CC      lib/efi_loader/efi_console.o
+[ALL  ]   LD      lib/rsa/built-in.o
+[ALL  ]   CC      lib/zlib/zlib.o
+[ALL  ]   CC      lib/efi_loader/efi_memory.o
+[ALL  ]   CC      net/nfs.o
+[ALL  ]   CC      lib/libfdt/fdt_strerror.o
+[ALL  ]   CC      lib/libfdt/fdt_sw.o
+[ALL  ]   CC      fs/ext4/ext4_write.o
+[ALL  ]   CC      lib/efi_loader/efi_disk.o
+[ALL  ]   CC      lib/libfdt/fdt_wip.o
+[ALL  ]   CC      lib/efi_loader/efi_net.o
+[ALL  ]   CC      net/ping.o
+[ALL  ]   CC      lib/libfdt/fdt_empty_tree.o
+[ALL  ]   CC      net/tftp.o
+[ALL  ]   LD      lib/efi_loader/built-in.o
+[ALL  ]   CC      lib/libfdt/fdt_addresses.o
+[ALL  ]   CC      fs/fat/fat_write.o
+[ALL  ]   CC      lib/libfdt/fdt_region.o
+[ALL  ]   CC      fs/ext4/ext4_journal.o
+[ALL  ]   LD      net/built-in.o
+[ALL  ]   CC      fs/ext4/crc16.o
+[ALL  ]   LD      lib/libfdt/built-in.o
+[ALL  ]   CC      fs/fat/file.o
+[ALL  ]   CC      test/dm/cmd_dm.o
+[ALL  ]   LD      lib/zlib/built-in.o
+[ALL  ]   CC      lib/fdtdec_common.o
+[ALL  ]   CC      lib/gunzip.o
+[ALL  ]   LD      test/dm/built-in.o
+[ALL  ]   CC      lib/initcall.o
+[ALL  ]   CC      lib/lmb.o
+[ALL  ]   LD      fs/ext4/built-in.o
+[ALL  ]   CC      lib/md5.o
+[ALL  ]   CC      lib/net_utils.o
+[ALL  ]   CC      lib/qsort.o
+[ALL  ]   CC      lib/rc4.o
+[ALL  ]   CC      lib/list_sort.o
+[ALL  ]   CC      lib/sha1.o
+[ALL  ]   CC      lib/sha256.o
+[ALL  ]   CC      lib/fdtdec.o
+[ALL  ]   CC      lib/hashtable.o
+[ALL  ]   LD      fs/fat/built-in.o
+[ALL  ]   LD      fs/built-in.o
+[ALL  ]   CC      lib/display_options.o
+[ALL  ]   CC      lib/crc32.o
+[ALL  ]   CC      lib/hang.o
+[ALL  ]   CC      lib/linux_compat.o
+[ALL  ]   CC      lib/linux_string.o
+[ALL  ]   CC      lib/membuff.o
+[ALL  ]   CC      lib/slre.o
+[ALL  ]   CC      lib/string.o
+[ALL  ]   CC      lib/time.o
+[ALL  ]   CC      lib/rand.o
+[ALL  ]   CC      lib/vsprintf.o
+[ALL  ]   CC      lib/panic.o
+[ALL  ]   CC      lib/strto.o
+[ALL  ]   CC      lib/strmhz.o
+[ALL  ]   LD      lib/built-in.o
+[ALL  ]   CC      examples/standalone/hello_world.o
+[ALL  ]   CC      examples/standalone/stubs.o
+[ALL  ]   LD      examples/standalone/libstubs.o
+[ALL  ]   LD      examples/standalone/hello_world
+[ALL  ]   OBJCOPY examples/standalone/hello_world.srec
+[ALL  ]   OBJCOPY examples/standalone/hello_world.bin
+[ALL  ]   LD      u-boot
+[ALL  ]   OBJCOPY u-boot.srec
+[ALL  ]   OBJCOPY u-boot-nodtb.bin
+[ALL  ]   SYM     u-boot.sym
+[ALL  ]   COPY    u-boot.bin
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Nothing to be done for 'post-build'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Nothing to be done for 'pre-install'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[INFO ] generate linux/u-boot configuration files
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent -j5 zynq_zc702_config || exit 255
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   HOSTCC  scripts/basic/fixdep
+[ALL  ]   HOSTCC  scripts/kconfig/conf.o
+[ALL  ]   HOSTCC  scripts/kconfig/zconf.tab.o
+[ALL  ]   HOSTLD  scripts/kconfig/conf
+[ALL  ] #
+[ALL  ] # configuration written to .config
+[ALL  ] #
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent'
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config" ]; then 	cp "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config" /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config; else 	if [ ! -d "$(dirname /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config)" ]; then 		mkdir -p "$(dirname /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config)"; 	fi; 	cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config"; fi
+[INFO ] update linux/u-boot source
+[ALL  ] if [ ! -d "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent" ]; then 	mkdir -p "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"; fi; if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent/.gitignore" ]; then 	grep -v -e "^#" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent/.gitignore" > u_boot_source_exclude; else 	echo "" > u_boot_source_exclude; fi; rsync -a --exclude-from=u_boot_source_exclude --filter=':C .git/ RCS SCCS CVS CVS.adm RCSLOG cvslog.* *.o' "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/download/u-boot-digilent"/ "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"/
+[ALL  ] chmod -R a+w "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent"/include/configs "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/board/xilinx/zynq"
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config.mk" ]; then 	rsync "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/config.mk"  "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/board/xilinx/zynq/config.mk"; fi
+[ALL  ] if [ -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot/platform-top.h" ]; then 	rsync "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/u-boot"/*.h "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs"/; 	uboot_sysconf_plat=`grep -e "^CONFIG_SYS_CONFIG_NAME=" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/.config" | sed -e "s/.*=\"\(.*\)\"/\1/g"`; 	if [ ! -f "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/${uboot_sysconf_plat}.h" ]; then 		echo "ERROR: failed to get the u-boot sys config."; 		exit 255; 	fi; 	mv "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/platform-top.h" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent/include/configs/${uboot_sysconf_plat}.h"; fi
+[INFO ] build linux/u-boot
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent -j5 oldconfig || exit 255
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   HOSTCC  scripts/basic/fixdep
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   HOSTCC  scripts/kconfig/conf.o
+[ALL  ]   HOSTCC  scripts/kconfig/zconf.tab.o
+[ALL  ]   HOSTLD  scripts/kconfig/conf
+[ALL  ] scripts/kconfig/conf  --oldconfig Kconfig
+[ALL  ] #
+[ALL  ] # configuration written to .config
+[ALL  ] #
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent -j5 EXT_DTB=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2//build/linux/device-tree/system.dtb all
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ] scripts/kconfig/conf  --silentoldconfig Kconfig
+[ALL  ]   CHK     include/config.h
+[ALL  ]   GEN     include/autoconf.mk
+[ALL  ]   GEN     include/autoconf.mk.dep
+[ALL  ]   CHK     include/config/uboot.release
+[ALL  ]   CHK     include/generated/timestamp_autogenerated.h
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   UPD     include/generated/timestamp_autogenerated.h
+[ALL  ]   Using /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent as source for U-Boot
+[ALL  ]   CHK     include/generated/version_autogenerated.h
+[ALL  ]   CC      lib/asm-offsets.s
+[ALL  ]   CC      arch/arm/lib/asm-offsets.s
+[ALL  ]   CHK     include/generated/generic-asm-offsets.h
+[ALL  ]   CHK     include/generated/asm-offsets.h
+[ALL  ]   HOSTCC  tools/envcrc.o
+[ALL  ]   HOSTCC  tools/common/env_embedded.o
+[ALL  ]   HOSTCC  tools/mkenvimage.o
+[ALL  ]   HOSTCC  tools/fit_image.o
+[ALL  ]   HOSTCC  tools/image-host.o
+[ALL  ]   HOSTCC  tools/dumpimage.o
+[ALL  ]   HOSTCC  tools/mkimage.o
+[ALL  ]   HOSTLD  tools/envcrc
+[ALL  ]   HOSTLD  tools/mkenvimage
+[ALL  ]   HOSTLD  tools/dumpimage
+[ALL  ]   HOSTLD  tools/mkimage
+[ALL  ]   HOSTLD  tools/fit_info
+[ALL  ]   HOSTLD  tools/fit_check_sign
+[ALL  ]   CC      board/xilinx/zynq/board.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cache_v7.o
+[ALL  ]   CC      arch/arm/mach-zynq/timer.o
+[ALL  ]   AS      arch/arm/lib/vectors.o
+[ALL  ]   AS      arch/arm/lib/crt0.o
+[ALL  ]   AS      arch/arm/lib/relocate.o
+[ALL  ]   CC      arch/arm/lib/bootm-fdt.o
+[ALL  ]   CC      arch/arm/mach-zynq/cpu.o
+[ALL  ]   AS      arch/arm/cpu/armv7/cache_v7_asm.o
+[ALL  ]   LD      board/xilinx/zynq/built-in.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cpu.o
+[ALL  ]   CC      arch/arm/mach-zynq/ddrc.o
+[ALL  ]   CC      arch/arm/lib/bootm.o
+[ALL  ]   CC      arch/arm/cpu/armv7/cp15.o
+[ALL  ]   CC      cmd/boot.o
+[ALL  ]   CC      arch/arm/mach-zynq/slcr.o
+[ALL  ]   CC      arch/arm/cpu/armv7/syslib.o
+[ALL  ]   CC      cmd/bootm.o
+[ALL  ]   CC      arch/arm/lib/stack.o
+[ALL  ]   AS      arch/arm/cpu/armv7/start.o
+[ALL  ]   CC      arch/arm/lib/interrupts.o
+[ALL  ]   CC      arch/arm/mach-zynq/clk.o
+[ALL  ]   LD      arch/arm/cpu/armv7/built-in.o
+[ALL  ]   CC      arch/arm/lib/reset.o
+[ALL  ]   CC      cmd/help.o
+[ALL  ]   CC      cmd/version.o
+[ALL  ]   AS      arch/arm/mach-zynq/lowlevel_init.o
+[ALL  ]   CC      common/init/board_init.o
+[ALL  ]   CC      arch/arm/lib/cache.o
+[ALL  ]   CC      disk/part.o
+[ALL  ]   CC      cmd/source.o
+[ALL  ]   LD      common/init/built-in.o
+[ALL  ]   CC      common/main.o
+[ALL  ]   CC      arch/arm/lib/cache-cp15.o
+[ALL  ]   LD      arch/arm/mach-zynq/built-in.o
+[ALL  ]   CC      common/exports.o
+[ALL  ]   CC      cmd/bdinfo.o
+[ALL  ]   CC      cmd/bootefi.o
+[ALL  ]   CC      common/hash.o
+[ALL  ]   CC      common/cli_hush.o
+[ALL  ]   AS      arch/arm/lib/ashldi3.o
+[ALL  ]   CC      disk/part_dos.o
+[ALL  ]   AS      arch/arm/lib/ashrdi3.o
+[ALL  ]   AS      arch/arm/lib/div64.o
+[ALL  ]   AS      arch/arm/lib/lib1funcs.o
+[ALL  ]   CC      cmd/cache.o
+[ALL  ]   AS      arch/arm/lib/lshrdi3.o
+[ALL  ]   AS      arch/arm/lib/muldi3.o
+[ALL  ]   AS      arch/arm/lib/uldivmod.o
+[ALL  ]   CC      arch/arm/lib/eabi_compat.o
+[ALL  ]   CC      drivers/block/blk_legacy.o
+[ALL  ]   CC      cmd/clk.o
+[ALL  ]   LD      disk/built-in.o
+[ALL  ]   CC      cmd/console.o
+[ALL  ]   LD      arch/arm/lib/built-in.o
+[ALL  ]   AR      arch/arm/lib/lib.a
+[ALL  ]   CC      cmd/echo.o
+[ALL  ]   CC      common/autoboot.o
+[ALL  ]   CC      drivers/core/device.o
+[ALL  ]   CC      cmd/eeprom.o
+[ALL  ]   LD      drivers/block/built-in.o
+[ALL  ]   CC      cmd/elf.o
+[ALL  ]   CC      drivers/core/lists.o
+[ALL  ]   CC      drivers/core/root.o
+[ALL  ]   CC      cmd/exit.o
+[ALL  ]   CC      drivers/gpio/gpio-uclass.o
+[ALL  ]   CC      cmd/ext4.o
+[ALL  ]   CC      common/board_f.o
+[ALL  ]   CC      common/board_r.o
+[ALL  ]   CC      drivers/core/uclass.o
+[ALL  ]   CC      cmd/ext2.o
+[ALL  ]   CC      cmd/fat.o
+[ALL  ]   CC      cmd/fdt.o
+[ALL  ]   CC      common/board_info.o
+[ALL  ]   CC      common/bootm.o
+[ALL  ]   CC      common/bootm_os.o
+[ALL  ]   CC      drivers/core/util.o
+[ALL  ]   CC      drivers/gpio/zynq_gpio.o
+[ALL  ]   CC      drivers/core/device-remove.o
+[ALL  ]   CC      drivers/i2c/i2c_core.o
+[ALL  ]   LD      drivers/gpio/built-in.o
+[ALL  ]   CC      drivers/core/simple-bus.o
+[ALL  ]   CC      drivers/core/dump.o
+[ALL  ]   CC      common/env_attr.o
+[ALL  ]   CC      cmd/fpga.o
+[ALL  ]   CC      cmd/fs.o
+[ALL  ]   CC      drivers/i2c/zynq_i2c.o
+[ALL  ]   CC      common/env_callback.o
+[ALL  ]   LD      drivers/core/built-in.o
+[ALL  ]   CC      drivers/crypto/fsl/sec.o
+[ALL  ]   CC      drivers/crypto/rsa_mod_exp/mod_exp_uclass.o
+[ALL  ]   CC      cmd/gpio.o
+[ALL  ]   LD      drivers/i2c/built-in.o
+[ALL  ]   CC      drivers/crypto/rsa_mod_exp/mod_exp_sw.o
+[ALL  ]   CC      common/env_flags.o
+[ALL  ]   LD      drivers/crypto/fsl/built-in.o
+[ALL  ]   CC      common/env_sf.o
+[ALL  ]   CC      common/fdt_support.o
+[ALL  ]   LD      drivers/crypto/rsa_mod_exp/built-in.o
+[ALL  ]   LD      drivers/crypto/built-in.o
+[ALL  ]   CC      drivers/dfu/dfu.o
+[ALL  ]   CC      cmd/i2c.o
+[ALL  ]   CC      drivers/fpga/fpga.o
+[ALL  ]   CC      drivers/fpga/zynqpl.o
+[ALL  ]   CC      common/miiphyutil.o
+[ALL  ]   CC      drivers/fpga/xilinx.o
+[ALL  ]   CC      drivers/dfu/dfu_ram.o
+[ALL  ]   CC      cmd/itest.o
+[ALL  ]   LD      drivers/dfu/built-in.o
+[ALL  ]   CC      cmd/load.o
+[ALL  ]   CC      cmd/mem.o
+[ALL  ]   LD      drivers/fpga/built-in.o
+[ALL  ]   CC      drivers/mmc/mmc-uclass.o
+[ALL  ]   CC      drivers/input/input.o
+[ALL  ]   CC      common/usb.o
+[ALL  ]   CC      drivers/mmc/mmc_legacy.o
+[ALL  ]   CC      drivers/mmc/mmc.o
+[ALL  ]   CC      drivers/input/key_matrix.o
+[ALL  ]   CC      drivers/mtd/mtdcore.o
+[ALL  ]   CC      cmd/mii.o
+[ALL  ]   LD      drivers/input/built-in.o
+[ALL  ]   CC      drivers/pcmcia/tqm8xx_pcmcia.o
+[ALL  ]   CC      common/usb_hub.o
+[ALL  ]   LD      drivers/pcmcia/built-in.o
+[ALL  ]   CC      drivers/rtc/date.o
+[ALL  ]   CC      cmd/mdio.o
+[ALL  ]   CC      drivers/mtd/mtd_uboot.o
+[ALL  ]   LD      drivers/rtc/built-in.o
+[ALL  ]   CC      drivers/video/display-uclass.o
+[ALL  ]   LD      drivers/mtd/built-in.o
+[ALL  ]   CC      drivers/mmc/sdhci.o
+[ALL  ]   CC      common/usb_storage.o
+[ALL  ]   CC      cmd/misc.o
+[ALL  ]   LD      drivers/video/built-in.o
+[ALL  ]   LD      drivers/built-in.o
+[ALL  ]   CC      common/flash.o
+[ALL  ]   CC      drivers/mtd/spi/sf-uclass.o
+[ALL  ]   CC      cmd/mmc.o
+[ALL  ]   CC      drivers/mtd/spi/sf_probe.o
+[ALL  ]   CC      drivers/mmc/zynq_sdhci.o
+[ALL  ]   CC      drivers/mtd/spi/spi_flash.o
+[ALL  ]   CC      common/edid.o
+[ALL  ]   CC      drivers/mmc/mmc_write.o
+[ALL  ]   CC      cmd/net.o
+[ALL  ]   LD      drivers/mmc/built-in.o
+[ALL  ]   CC      cmd/pcmcia.o
+[ALL  ]   CC      common/splash.o
+[ALL  ]   CC      cmd/sf.o
+[ALL  ]   CC      common/env_common.o
+[ALL  ]   CC      drivers/net/netconsole.o
+[ALL  ]   CC      drivers/net/zynq_gem.o
+[ALL  ]   CC      drivers/mtd/spi/sf_params.o
+[ALL  ]   CC      common/console.o
+[ALL  ]   CC      drivers/mtd/spi/sf.o
+[ALL  ]   CC      cmd/spi.o
+[ALL  ]   CC      cmd/test.o
+[ALL  ]   LD      drivers/mtd/spi/built-in.o
+[ALL  ]   CC      cmd/usb.o
+[ALL  ]   LD      drivers/net/built-in.o
+[ALL  ]   CC      common/dlmalloc.o
+[ALL  ]   CC      cmd/thordown.o
+[ALL  ]   CC      drivers/net/phy/phy.o
+[ALL  ]   CC      drivers/net/phy/marvell.o
+[ALL  ]   CC      common/malloc_simple.o
+[ALL  ]   CC      common/image.o
+[ALL  ]   CC      common/image-fdt.o
+[ALL  ]   CC      cmd/ximg.o
+[ALL  ]   CC      common/image-fit.o
+[ALL  ]   LD      drivers/net/phy/built-in.o
+[ALL  ]   CC      common/image-sig.o
+[ALL  ]   CC      cmd/dfu.o
+[ALL  ]   CC      common/memsize.o
+[ALL  ]   CC      cmd/nvedit.o
+[ALL  ]   CC      cmd/disk.o
+[ALL  ]   CC      common/stdio.o
+[ALL  ]   CC      common/cli_simple.o
+[ALL  ]   CC      common/cli.o
+[ALL  ]   CC      common/cli_readline.o
+[ALL  ]   CC      common/command.o
+[ALL  ]   CC      common/s_record.o
+[ALL  ]   CC      common/xyzModem.o
+[ALL  ]   LD      cmd/built-in.o
+[ALL  ]   CC      drivers/serial/serial-uclass.o
+[ALL  ]   CC      drivers/spi/spi-uclass.o
+[ALL  ]   CC      drivers/spi/zynq_qspi.o
+[ALL  ]   CC      drivers/serial/serial_zynq.o
+[ALL  ]   LD      common/built-in.o
+[ALL  ]   LD      drivers/serial/built-in.o
+[ALL  ]   CC      drivers/usb/host/ehci-hcd.o
+[ALL  ]   CC      drivers/usb/gadget/epautoconf.o
+[ALL  ]   CC      drivers/usb/host/ehci-zynq.o
+[ALL  ]   LD      drivers/spi/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/config.o
+[ALL  ]   CC      drivers/usb/gadget/usbstring.o
+[ALL  ]   CC      drivers/usb/gadget/ci_udc.o
+[ALL  ]   CC      drivers/usb/gadget/g_dnl.o
+[ALL  ]   CC      drivers/usb/ulpi/ulpi.o
+[ALL  ]   CC      drivers/usb/gadget/f_thor.o
+[ALL  ]   CC      drivers/usb/ulpi/ulpi-viewport.o
+[ALL  ]   LD      drivers/usb/ulpi/built-in.o
+[ALL  ]   CC      drivers/usb/gadget/f_dfu.o
+[ALL  ]   CC      fs/fs.o
+[ALL  ]   LD      drivers/usb/host/built-in.o
+[ALL  ]   CC      fs/ext4/ext4fs.o
+[ALL  ]   CC      lib/libfdt/fdt.o
+[ALL  ]   CC      lib/libfdt/fdt_ro.o
+[ALL  ]   CC      lib/efi_loader/efi_image_loader.o
+[ALL  ]   CC      fs/ext4/ext4_common.o
+[ALL  ]   LD      drivers/usb/gadget/built-in.o
+[ALL  ]   CC      lib/efi_loader/efi_boottime.o
+[ALL  ]   CC      lib/rsa/rsa-verify.o
+[ALL  ]   CC      lib/rsa/rsa-checksum.o
+[ALL  ]   CC      lib/rsa/rsa-mod-exp.o
+[ALL  ]   CC      lib/libfdt/fdt_rw.o
+[ALL  ]   CC      net/checksum.o
+[ALL  ]   CC      lib/efi_loader/efi_runtime.o
+[ALL  ]   CC      net/arp.o
+[ALL  ]   LD      lib/rsa/built-in.o
+[ALL  ]   CC      lib/efi_loader/efi_console.o
+[ALL  ]   CC      fs/fat/fat_write.o
+[ALL  ]   CC      lib/libfdt/fdt_strerror.o
+[ALL  ]   CC      net/bootp.o
+[ALL  ]   CC      lib/libfdt/fdt_sw.o
+[ALL  ]   CC      lib/efi_loader/efi_memory.o
+[ALL  ]   CC      lib/libfdt/fdt_wip.o
+[ALL  ]   CC      lib/efi_loader/efi_disk.o
+[ALL  ]   CC      net/eth-uclass.o
+[ALL  ]   CC      lib/libfdt/fdt_empty_tree.o
+[ALL  ]   CC      fs/ext4/dev.o
+[ALL  ]   CC      lib/libfdt/fdt_addresses.o
+[ALL  ]   CC      lib/libfdt/fdt_region.o
+[ALL  ]   CC      lib/efi_loader/efi_net.o
+[ALL  ]   CC      fs/ext4/ext4_write.o
+[ALL  ]   CC      net/eth_common.o
+[ALL  ]   LD      lib/libfdt/built-in.o
+[ALL  ]   CC      net/net.o
+[ALL  ]   LD      lib/efi_loader/built-in.o
+[ALL  ]   CC      lib/zlib/zlib.o
+[ALL  ]   CC      fs/fat/file.o
+[ALL  ]   LD      fs/fat/built-in.o
+[ALL  ]   CC      net/nfs.o
+[ALL  ]   CC      fs/ext4/ext4_journal.o
+[ALL  ]   CC      net/ping.o
+[ALL  ]   CC      net/tftp.o
+[ALL  ]   CC      test/dm/cmd_dm.o
+[ALL  ]   LD      test/dm/built-in.o
+[ALL  ]   CC      fs/ext4/crc16.o
+[ALL  ]   CC      lib/fdtdec_common.o
+[ALL  ]   LD      net/built-in.o
+[ALL  ]   CC      lib/gunzip.o
+[ALL  ]   CC      lib/initcall.o
+[ALL  ]   LD      fs/ext4/built-in.o
+[ALL  ]   LD      fs/built-in.o
+[ALL  ]   CC      lib/lmb.o
+[ALL  ]   CC      lib/md5.o
+[ALL  ]   CC      lib/net_utils.o
+[ALL  ]   CC      lib/qsort.o
+[ALL  ]   CC      lib/rc4.o
+[ALL  ]   CC      lib/list_sort.o
+[ALL  ]   CC      lib/sha1.o
+[ALL  ]   CC      lib/sha256.o
+[ALL  ]   CC      lib/fdtdec.o
+[ALL  ]   LD      lib/zlib/built-in.o
+[ALL  ]   CC      lib/hashtable.o
+[ALL  ]   CC      lib/display_options.o
+[ALL  ]   CC      lib/crc32.o
+[ALL  ]   CC      lib/hang.o
+[ALL  ]   CC      lib/linux_compat.o
+[ALL  ]   CC      lib/linux_string.o
+[ALL  ]   CC      lib/membuff.o
+[ALL  ]   CC      lib/slre.o
+[ALL  ]   CC      lib/string.o
+[ALL  ]   CC      lib/time.o
+[ALL  ]   CC      lib/rand.o
+[ALL  ]   CC      lib/vsprintf.o
+[ALL  ]   CC      lib/panic.o
+[ALL  ]   CC      lib/strto.o
+[ALL  ]   CC      lib/strmhz.o
+[ALL  ]   LD      lib/built-in.o
+[ALL  ]   CC      examples/standalone/hello_world.o
+[ALL  ]   CC      examples/standalone/stubs.o
+[ALL  ]   LD      examples/standalone/libstubs.o
+[ALL  ]   LD      examples/standalone/hello_world
+[ALL  ]   OBJCOPY examples/standalone/hello_world.srec
+[ALL  ]   OBJCOPY examples/standalone/hello_world.bin
+[ALL  ]   LD      u-boot
+[ALL  ]   OBJCOPY u-boot.srec
+[ALL  ]   OBJCOPY u-boot-nodtb.bin
+[ALL  ]   SYM     u-boot.sym
+[ALL  ]   COPY    u-boot.bin
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/src/u-boot-digilent'
+[INFO ] install linux/u-boot
+[ALL  ] cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/u-boot.srec /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux; cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/u-boot.bin /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux; if [ -f /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/u-boot.elf ]; then 	cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/u-boot.elf /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux/u-boot.elf; else 	cp /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot/u-boot-digilent/u-boot /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux/u-boot.elf; fi
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/u-boot'
+[INFO ] package zImage
+[INFO ] zImage linux/kernel
+[INFO ] install linux/kernel
+[INFO ] config linux/kernel
+[INFO ] oldconfig linux
+[INFO ] oldconfig linux/kernel
+[INFO ] /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/packages-repo/Kconfig.pkgs
+[INFO ] /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/packages-repo/Kconfig.pkgs.default
+[INFO ] update_rootfs_config_pkgs
+[INFO ] oldconfig linux/rootfs
+[INFO ] generate linux/u-boot configuration files
+[INFO ] generate linux/u-boot board header files
+[INFO ] oldconfig linux/u-boot
+[INFO ] config linux/kernel
+[INFO ] oldconfig linux
+[INFO ] oldconfig linux/kernel
+[INFO ] /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/packages-repo/Kconfig.pkgs
+[INFO ] /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/packages-repo/Kconfig.pkgs.default
+[INFO ] update_rootfs_config_pkgs
+[INFO ] oldconfig linux/rootfs
+[INFO ] generate linux/u-boot configuration files
+[INFO ] generate linux/u-boot board header files
+[INFO ] oldconfig linux/u-boot

@@ -1,0 +1,2 @@
+zynq_sdhci.c:43:12:arasan_sdhci_ofdata_to_platdata	16	static
+zynq_sdhci.c:20:12:arasan_sdhci_probe	16	static

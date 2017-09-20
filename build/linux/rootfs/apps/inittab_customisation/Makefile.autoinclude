@@ -1,0 +1,8 @@
+PROOT:=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2
+INSTANCE:=linux/rootfs/inittab_customisation
+-include /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/Makefile.export
+-include /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/Makefile.export
+-include /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/apps/inittab_customisation/Makefile.export
+CONFIGFILE:=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/rootfs/config
+dir_apps_y=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/components/apps/inittab_customisation
+

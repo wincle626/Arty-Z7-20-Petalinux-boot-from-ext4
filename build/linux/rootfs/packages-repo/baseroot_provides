@@ -1,0 +1,409 @@
+base-files-3.0.14-r89@zynq_generic
+  Provides:
+    base-files = 3.0.14-r89@zynq_generic
+base-passwd-3.5.29-r0@cortexa9hf_vfp_neon
+  Provides:
+    base-passwd = 3.5.29-r0@cortexa9hf_vfp_neon
+busybox-1.23.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    /bin/sed
+    /bin/sh
+    /usr/bin/env
+    busybox = 1.23.2-r0@cortexa9hf_vfp_neon
+    elf(buildid) = 659f140ee49b560d179aab9f624689d2b8ac0226
+    elf(buildid) = a5e1f922f7fca518fcaee73dddbc5f6b83ee1f07
+    elf(buildid) = a8d980412df857ebc039fc6f26c716cbcd3bb630
+busybox-hwclock-1.23.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    busybox-hwclock = 1.23.2-r0@cortexa9hf_vfp_neon
+busybox-inetd-1.23.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    busybox-inetd = 1.23.2-r0@cortexa9hf_vfp_neon
+busybox-mdev-1.23.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    busybox-mdev = 1.23.2-r0@cortexa9hf_vfp_neon
+busybox-udhcpc-1.23.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    busybox-udhcpc = 1.23.2-r0@cortexa9hf_vfp_neon
+e2fsprogs-mke2fs-1.42.9-r0@cortexa9hf_vfp_neon
+  Provides:
+    e2fsprogs-mke2fs = 1.42.9-r0@cortexa9hf_vfp_neon
+    elf(buildid) = 36379d47644e1d507eca2347c74673a6621f7fbc
+gdbserver-7.9.1-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 33c4e990c6e2449ef3ea2642087dd4c6cc3f60d9
+    gdbserver = 7.9.1-r0@cortexa9hf_vfp_neon
+i2c-tools-3.1.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 5afdeff4a597de2efdde8d51a0c70fc084a11f5f
+    elf(buildid) = 71d8302c3d1eed264ae236eb05436d813d827aca
+    elf(buildid) = 78a002319d99371c9a7b269670b6fff53e40b901
+    elf(buildid) = 832bd693c7207dc9e29ff920e87f6075e12c2cb4
+    elf(buildid) = 8c2fea9bac0f708eb49e9f45faf51ebfa341ea37
+    elf(buildid) = add74d25bcb876239822408a82726030dc300f22
+    elf(buildid) = cba4778ab0c235d7ad842905e79946a44cea2c25
+    i2c-tools = 3.1.2-r0@cortexa9hf_vfp_neon
+i2c-tools-lic-3.1.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    i2c-tools-lic = 3.1.2-r0@cortexa9hf_vfp_neon
+i2c-tools-misc-3.1.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    i2c-tools-misc = 3.1.2-r0@cortexa9hf_vfp_neon
+init-ifupdown-1.0-r7@cortexa9hf_vfp_neon
+  Provides:
+    init-ifupdown = 1.0-r7@cortexa9hf_vfp_neon
+initscripts-1.0-r155@cortexa9hf_vfp_neon
+  Provides:
+    initscripts = 1.0-r155@cortexa9hf_vfp_neon
+initscripts-functions-1.0-r155@cortexa9hf_vfp_neon
+  Provides:
+    initscripts-functions = 1.0-r155@cortexa9hf_vfp_neon
+libblkid1-2.26.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = fea9dcdeff57c91968ceae084994328733c8d9a5
+    libblkid.so.1
+    libblkid.so.1(BLKID_1.0)
+    libblkid.so.1(BLKID_2.15)
+    libblkid.so.1(BLKID_2.17)
+    libblkid.so.1(BLKID_2.18)
+    libblkid.so.1(BLKID_2.20)
+    libblkid.so.1(BLKID_2.21)
+    libblkid.so.1(BLKID_2.23)
+    libblkid.so.1(BLKID_2.25)
+    libblkid1 = 2.26.2-r0@cortexa9hf_vfp_neon
+    util-linux-libblkid = 2.26.2
+libc6-2.19+2014.08-r1@cortexa9hf_vfp_neon
+  Provides:
+    eglibc
+    elf(buildid) = 0567abef10974d7ee9d3fc131f4fea01f1998ebf
+    elf(buildid) = 0eeb13a2a3e7692cb5fd7052941a566eeff8a07c
+    elf(buildid) = 2ecc2076cb1de5e9e7772f5f25ac0d15d350146a
+    elf(buildid) = 39aed35ba58c9e0723bdfb8661612a79eb701fcf
+    elf(buildid) = 3b68e4dca31e3e943aa32b176c0885a5e56bd218
+    elf(buildid) = 47ecc0805f918fb2c7b92d9abcef7afa5b958c87
+    elf(buildid) = 4e15676f5a1d0a9f31065700489d6008aa17bdc7
+    elf(buildid) = 55a256a5fa36da3fd0fb833a3c43b7f1f9a14a21
+    elf(buildid) = 65ed2d3f10831fa210696482fc03b0eec8558126
+    elf(buildid) = 6af15b144231e910075ffd16f86183eee45bb17c
+    elf(buildid) = 8a370e362a06a8de94e2724b46e6b40e22e366d2
+    elf(buildid) = 979d237a4d74c847aec2d9073f31f99f95686990
+    elf(buildid) = ac5c79a91efdcbe2e9bdfa46e8007ca52457737c
+    elf(buildid) = baed1c9c1c408b845b370e3e93423aa7e4a07f0c
+    elf(buildid) = c15ef6e1ae4de8d5f50e47742d4b0acb6633a0cb
+    elf(buildid) = c96390b2ea7d4b1783673b23129f012b2123540b
+    glibc
+    glibc-xilinx = 2.19+2014.08
+    ld-linux-armhf.so.3
+    ld-linux-armhf.so.3(GLIBC_2.4)
+    ld-linux-armhf.so.3(GLIBC_PRIVATE)
+    libBrokenLocale.so.1
+    libBrokenLocale.so.1(GLIBC_2.4)
+    libanl.so.1
+    libanl.so.1(GLIBC_2.4)
+    libc.so.6
+    libc.so.6(GLIBC_2.10)
+    libc.so.6(GLIBC_2.11)
+    libc.so.6(GLIBC_2.12)
+    libc.so.6(GLIBC_2.13)
+    libc.so.6(GLIBC_2.14)
+    libc.so.6(GLIBC_2.15)
+    libc.so.6(GLIBC_2.16)
+    libc.so.6(GLIBC_2.17)
+    libc.so.6(GLIBC_2.18)
+    libc.so.6(GLIBC_2.4)
+    libc.so.6(GLIBC_2.5)
+    libc.so.6(GLIBC_2.6)
+    libc.so.6(GLIBC_2.7)
+    libc.so.6(GLIBC_2.8)
+    libc.so.6(GLIBC_2.9)
+    libc.so.6(GLIBC_PRIVATE)
+    libc6 = 2.19+2014.08-r1@cortexa9hf_vfp_neon
+    libcrypt.so.1
+    libcrypt.so.1(GLIBC_2.4)
+    libdl.so.2
+    libdl.so.2(GLIBC_2.4)
+    libdl.so.2(GLIBC_PRIVATE)
+    libm.so.6
+    libm.so.6(GLIBC_2.15)
+    libm.so.6(GLIBC_2.18)
+    libm.so.6(GLIBC_2.4)
+    libnsl.so.1
+    libnsl.so.1(GLIBC_2.4)
+    libnsl.so.1(GLIBC_PRIVATE)
+    libnss_compat.so.2
+    libnss_compat.so.2(GLIBC_PRIVATE)
+    libnss_dns.so.2
+    libnss_dns.so.2(GLIBC_PRIVATE)
+    libnss_files.so.2
+    libnss_files.so.2(GLIBC_PRIVATE)
+    libpthread.so.0
+    libpthread.so.0(GLIBC_2.11)
+    libpthread.so.0(GLIBC_2.12)
+    libpthread.so.0(GLIBC_2.18)
+    libpthread.so.0(GLIBC_2.4)
+    libpthread.so.0(GLIBC_PRIVATE)
+    libresolv.so.2
+    libresolv.so.2(GLIBC_2.4)
+    libresolv.so.2(GLIBC_2.9)
+    libresolv.so.2(GLIBC_PRIVATE)
+    librt.so.1
+    librt.so.1(GLIBC_2.4)
+    librt.so.1(GLIBC_2.7)
+    libutil.so.1
+    libutil.so.1(GLIBC_2.4)
+    rtld(GNU_HASH)
+libcom-err2-1.42.9-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 6053766e6a7bfaf3cf4fe97dbf8106a4d00f55fc
+    libcom-err2 = 1.42.9-r0@cortexa9hf_vfp_neon
+    libcom_err.so.2
+    libcomerr = 1.42.9
+libe2p2-1.42.9-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 8d9cfd925e8cc169998f7b89f1fcb680e1d8026e
+    libe2p = 1.42.9
+    libe2p.so.2
+    libe2p2 = 1.42.9-r0@cortexa9hf_vfp_neon
+libext2fs2-1.42.9-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 4290838a9e82baad57a2a249c776156051936b4f
+    elf(buildid) = 526d3622dbb265adbac686d3d9b9ad2edb7b6945
+    libext2fs = 1.42.9
+    libext2fs.so.2
+    libext2fs2 = 1.42.9-r0@cortexa9hf_vfp_neon
+libgcc-s1-4.9.2-r1@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 7467a65ad74089d1b06fa4846fd24e7cf40b6dc7
+    libgcc = 4.9.2
+    libgcc-s1 = 4.9.2-r1@cortexa9hf_vfp_neon
+    libgcc_s.so.1
+    libgcc_s.so.1(GCC_3.0)
+    libgcc_s.so.1(GCC_3.3)
+    libgcc_s.so.1(GCC_3.3.1)
+    libgcc_s.so.1(GCC_3.3.4)
+    libgcc_s.so.1(GCC_3.4)
+    libgcc_s.so.1(GCC_3.4.2)
+    libgcc_s.so.1(GCC_3.5)
+    libgcc_s.so.1(GCC_4.0.0)
+    libgcc_s.so.1(GCC_4.2.0)
+    libgcc_s.so.1(GCC_4.3.0)
+    libgcc_s.so.1(GCC_4.7.0)
+    libgcc_s.so.1(GLIBC_2.0)
+libperl5-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 33e15308f6b3cd2d849d34de8db7a8bf37598cac
+    libperl.so.5
+    libperl5 = 5.22.0-r0@cortexa9hf_vfp_neon
+    perl-lib
+libuuid1-2.26.2-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = e1456614e06bbd52d5baed2bb0469f49da7b765f
+    libuuid.so.1
+    libuuid.so.1(UUIDD_PRIVATE)
+    libuuid.so.1(UUID_1.0)
+    libuuid.so.1(UUID_2.20)
+    libuuid1 = 2.26.2-r0@cortexa9hf_vfp_neon
+    util-linux-libuuid = 2.26.2
+modutils-initscripts-1.0-r7@cortexa9hf_vfp_neon
+  Provides:
+    modutils-initscripts = 1.0-r7@cortexa9hf_vfp_neon
+mtd-utils-1.5.1+git0+9f107132a6-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 18cc7721e751e3231f5acdf843df2d0328f33900
+    elf(buildid) = 4081c37d17f06a3de4c4cba7670ed03a8a547b2e
+    elf(buildid) = 454bcdebc85f10c44b3b4aee528064f466d2045a
+    elf(buildid) = 65ecbfdbd4a69aadf96bf33b893181b40690001a
+    elf(buildid) = 75ed921ab8089dc21f9ded8335caff6f441e0aac
+    elf(buildid) = 8271c221bc447b54d6258a015ae0b8345351e395
+    elf(buildid) = 9875151f0bc4f2bc6f60a6ff8e6d2b76042ebdbd
+    elf(buildid) = 9e6e910ed51018eaf2f8ddf9d38bfdeeaef7d11b
+    elf(buildid) = a40eb5085aed175b4a1eb0af3c8d0f5b904a210c
+    elf(buildid) = a5dbf9fc7b629cca1e263317c1435f9f77cbc15c
+    elf(buildid) = af277d6e0433833010ecb7d5a04d44300d8acc45
+    elf(buildid) = cef278795665688d5747d9ebef6a10c129b01793
+    elf(buildid) = fc98b868a589c438cbdf7c745a9ecd2a5a014b23
+    mtd-utils = 1.5.1+git0+9f107132a6-r0@cortexa9hf_vfp_neon
+netbase-1:5.3-r0@cortexa9hf_vfp_neon
+  Provides:
+    netbase = 1:5.3-r0@cortexa9hf_vfp_neon
+perl-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    /usr/bin/perl
+    elf(buildid) = 34b058f4990e91aadc36804843e378d51f62ac44
+    perl = 5.22.0-r0@cortexa9hf_vfp_neon
+    perl-module-config
+    perl-module-strict
+    perl-module-vars
+    perl-module-warnings
+    perl-module-warnings-register
+perl-module-b-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    B.so
+    elf(buildid) = 32e99e40af0d9fea363afff7bdbffd6dd83042e6
+    perl-module-b = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-base-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-base = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-carp-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-carp = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-constant-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-constant = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-cwd-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    Cwd.so
+    elf(buildid) = 01046482afb35be4cc6ba34cf7a4516c61b40ab2
+    perl-module-cwd = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-dynaloader-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-dynaloader = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-exporter-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-exporter = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-exporter-heavy-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-exporter-heavy = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-embed-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-embed = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-liblist-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-liblist = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-liblist-kid-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-liblist-kid = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-makemaker-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-makemaker = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-makemaker-config-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-makemaker-config = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-makemaker-version-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-makemaker-version = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-makemaker-version-regex-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-makemaker-version-regex = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-manifest-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-manifest = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-miniperl-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-miniperl = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-mm-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-mm = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-extutils-my-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-extutils-my = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-fcntl-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    Fcntl.so
+    elf(buildid) = 02844c20861e1181be9fe4dadfdff7abe6bcc41d
+    perl-module-fcntl = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-basename-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-basename = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-copy-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-copy = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-find-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-find = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-path-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-path = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-spec-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-spec = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-file-spec-unix-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-file-spec-unix = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-getopt-std-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-getopt-std = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-io-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    IO.so
+    elf(buildid) = ed83844fe2c2508e98e9830fcfadc8a7545c1ff8
+    perl-module-io = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-io-file-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-io-file = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-io-handle-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-io-handle = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-io-seekable-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-io-seekable = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-list-util-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    Util.so
+    elf(buildid) = b624b376f345d79acf20ed78e1bb62aec7576c21
+    perl-module-list-util = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-re-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = bab6982f6fbb4af5cb88180d114d0b91ce170d01
+    perl-module-re = 5.22.0-r0@cortexa9hf_vfp_neon
+    re.so
+perl-module-scalar-util-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-scalar-util = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-selectsaver-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-selectsaver = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-symbol-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-symbol = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-tap-parser-iterator-process-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-tap-parser-iterator-process = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-tap-parser-iteratorfactory-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-tap-parser-iteratorfactory = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-tap-parser-sourcehandler-perl-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-tap-parser-sourcehandler-perl = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-term-cap-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-term-cap = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-text-parsewords-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-text-parsewords = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-version-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-version = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-version-regex-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-version-regex = 5.22.0-r0@cortexa9hf_vfp_neon
+perl-module-xsloader-5.22.0-r0@cortexa9hf_vfp_neon
+  Provides:
+    perl-module-xsloader = 5.22.0-r0@cortexa9hf_vfp_neon
+sysvinit-2.88dsf-r14@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 2bba03d769a8f9c47c3e024e150f81e3d6c138c2
+    elf(buildid) = 2e98e735c0785c41122ea18c16f02df56567e66b
+    elf(buildid) = 3642fa70f6a5aa7505d18bc0a318d4a722ba142e
+    elf(buildid) = 4453e61dc72643c17376d050ec80aef6648bea83
+    elf(buildid) = 4690ad47e7504628946b2a18a79c49418f81ce92
+    elf(buildid) = 878520a35981f0cedaf80d9868c3f372a06bc640
+    elf(buildid) = 8b6e045ab8b5881c2d560603a563d5dfe21b88db
+    elf(buildid) = d2469c2b738af29f39b2c914050fd0ce97492cda
+    elf(buildid) = d7aa6ae43fb15fa84905abfb28c682c558bfe0dd
+    elf(buildid) = dbd818ee378c4e574998802326f929cf55374290
+    elf(buildid) = f2ee7021fcb421371e379710874938abc7a3a102
+    sysvinit = 2.88dsf-r14@cortexa9hf_vfp_neon
+sysvinit-inittab-2.88dsf-r10@zynq_generic
+  Provides:
+    sysvinit-inittab = 2.88dsf-r10@zynq_generic
+sysvinit-pidof-2.88dsf-r14@cortexa9hf_vfp_neon
+  Provides:
+    elf(buildid) = 3bbfcf3f37fefebc26250658c8edefaed40215af
+    sysvinit-pidof = 2.88dsf-r14@cortexa9hf_vfp_neon
+update-alternatives-opkg-0.1.8+git0+53274f0875-r0@cortexa9hf_vfp_neon
+  Provides:
+    update-alternatives
+    update-alternatives-cworth
+    update-alternatives-opkg = 0.1.8+git0+53274f0875-r0@cortexa9hf_vfp_neon
+

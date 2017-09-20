@@ -1,0 +1,1 @@
+cmd_net/ipv6/xfrm6_mode_transport.ko := arm-linux-gnueabihf-ld -EL -r  -T /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/scripts/module-common.lds --build-id  -o net/ipv6/xfrm6_mode_transport.ko net/ipv6/xfrm6_mode_transport.o net/ipv6/xfrm6_mode_transport.mod.o

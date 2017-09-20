@@ -1,0 +1,16 @@
+f_thor.c:635:13:thor_setup_complete	0	static
+f_thor.c:590:13:thor_rx_tx_complete	16	static
+f_thor.c:643:1:thor_func_setup	24	static
+f_thor.c:530:12:thor_rx_data	40	static
+f_thor.c:562:13:thor_tx_data	40	static
+f_thor.c:55:13:send_rsp	8	static
+f_thor.c:1010:5:thor_add	16	static
+f_thor.c:879:13:thor_func_disable	16	static
+f_thor.c:869:13:thor_unbind	8	static
+f_thor.c:751:12:thor_func_bind	32	static
+f_thor.c:63:13:send_data_rsp.constprop	104	static
+f_thor.c:619:28:thor_start_ep	16	static
+f_thor.c:958:12:thor_func_set_alt	32	static
+f_thor.c:322:12:process_data	82048	static
+f_thor.c:695:5:thor_init	16	static
+f_thor.c:725:5:thor_handle	16	static

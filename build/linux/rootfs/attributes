@@ -1,0 +1,11 @@
+TYPE=rootfs
+BUILD_FILE=Makefile Makefile.export sys_init Kconfig.part manual_mdev.mak smart-pkgs-common.mk smart-wrapper.sh generate-export scan-architecture.sh rootfs-sandbox.sh
+SUBCOMPONENTS__MODULES__PROPERTY__TYPE=modules
+SUBCOMPONENTS__MODULES__PROPERTY__IS_MULTI_ALLOWED=Y
+SUBCOMPONENTS__APPS__PROPERTY__TYPE=apps
+SUBCOMPONENTS__APPS__PROPERTY__IS_MULTI_ALLOWED=Y
+SUBCOMPONENTS__APPS__PROPERTY__BUILD_DEPENDENCY=libs
+SUBCOMPONENTS__LIBS__PROPERTY__TYPE=libs
+SUBCOMPONENTS__LIBS__PROPERTY__IS_MULTI_ALLOWED=Y
+BUILD_ALL=pre-build build post-build pre-install install
+BUILD_TARGET_IMPLEMENTED=config

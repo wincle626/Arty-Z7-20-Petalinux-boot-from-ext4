@@ -1,0 +1,27 @@
+PROOT:=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2
+INSTANCE:=linux/rootfs
+-include /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/Makefile.export
+-include /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/rootfs/Makefile.export
+CONFIGFILE:=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/rootfs/config
+dir_rootfs_y=/opt/petalinux/petalinux-v2016.2-final/components/rootfs/petalinux-rootfs
+dir_apps_y+=/none/apps/multi/console-blank
+depend_apps_y+=$(dir_libs_y)
+dir_apps_y+=/none/apps/multi/fwupgrade
+depend_apps_y+=$(dir_libs_y)
+dir_apps_y+=/none/apps/multi/inittab_customisation
+depend_apps_y+=$(dir_libs_y)
+dir_apps_y+=/none/apps/multi/peekpoke
+depend_apps_y+=$(dir_libs_y)
+ifeq ($(dir_libs_y),)
+$(addprefix sub_build_component_,$(dir_libs_y)):$(addprefix sub_build_component_,$(depend_libs_y))
+$(addprefix sub_install_component_,$(dir_libs_y)):$(addprefix sub_install_component_,$(depend_libs_y))
+endif
+ifeq ($(dir_libs_y),)
+$(addprefix sub_build_component_,$(dir_libs_y)):$(addprefix sub_build_component_,$(depend_libs_y))
+$(addprefix sub_install_component_,$(dir_libs_y)):$(addprefix sub_install_component_,$(depend_libs_y))
+endif
+ifeq ($(dir_libs_y),)
+$(addprefix sub_build_component_,$(dir_libs_y)):$(addprefix sub_build_component_,$(depend_libs_y))
+$(addprefix sub_install_component_,$(dir_libs_y)):$(addprefix sub_install_component_,$(depend_libs_y))
+endif
+

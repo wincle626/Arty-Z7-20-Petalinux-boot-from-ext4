@@ -1,0 +1,5 @@
+rootfs="${1}"
+
+configfile=$(echo "${rootfs}" | tr '/' ' ' | awk '{for (i=1; i<NF; i++) printf "%s/configs/",$i;printf "%s/config",$NF}')
+sed -i -e "s%@ROOTFS_CONFIG@%${configfile}%g" -e "s%@ROOTFS@%${rootfs}%g"  Makefile.export
+

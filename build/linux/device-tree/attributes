@@ -1,0 +1,3 @@
+TYPE=device-tree
+BUILD_FILE=Makefile
+BUILD_ALL=pre-build build post-build pre-install install post-install

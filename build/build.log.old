@@ -1,0 +1,47 @@
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Nothing to be done for 'pre-build'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] rsync /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/subsystems/linux/configs/kernel/config /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent/.config
+[ALL  ] rm -rf /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/boot /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/usr
+[ALL  ] ln -s "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent/arch/arm/boot" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/boot"
+[ALL  ] ln -s "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent/usr" "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/usr"
+[INFO ] build linux/kernel
+[ALL  ] make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- O=/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent KCONFIG_CONFIG="/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent"/.config -j5 -C /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent all
+[ALL  ] make[1]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent'
+[ALL  ] make[2]: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent'
+[ALL  ]   GEN     ./Makefile
+[ALL  ] scripts/kconfig/conf  --silentoldconfig Kconfig
+[ALL  ]   CHK     include/config/kernel.release
+[ALL  ]   GEN     ./Makefile
+[ALL  ]   CHK     include/generated/uapi/linux/version.h
+[ALL  ]   Using /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent as source for kernel
+[ALL  ]   CHK     include/generated/utsrelease.h
+[ALL  ] make[3]: 'include/generated/mach-types.h' is up to date.
+[ALL  ]   CHK     include/generated/timeconst.h
+[ALL  ]   CHK     include/generated/bounds.h
+[ALL  ]   CHK     include/generated/asm-offsets.h
+[ALL  ]   CALL    /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent/scripts/checksyscalls.sh
+[ALL  ]   CHK     include/generated/compile.h
+[ALL  ]   GZIP    kernel/config_data.gz
+[ALL  ]   CHK     kernel/config_data.h
+[ALL  ]   Kernel: arch/arm/boot/Image is ready
+[ALL  ]   Building modules, stage 2.
+[ALL  ]   Kernel: arch/arm/boot/Image is ready
+[ALL  ]   Kernel: arch/arm/boot/zImage is ready
+[ALL  ]   MODPOST 26 modules
+[ALL  ] make[2]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent'
+[ALL  ] make[1]: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/download/linux-digilent'
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Nothing to be done for 'post-build'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Nothing to be done for 'pre-install'.
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[ALL  ] make: Entering directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'
+[INFO ] install linux/kernel
+[ALL  ] if [ ! -f /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent/vmlinux ]; then 	echo "ERROR: /home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent/vmlinux is not found. Please build linux first!"; 	exit 255; fi
+[ALL  ] cp "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent"/vmlinux "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux"/
+[ALL  ] cp "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel/linux-digilent"/System.map "/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/images/linux"/System.map.linux
+[ALL  ] make: Leaving directory '/home/yunwu/workspaces/gitworkspace/arty-z7/Digilent-Arty-Z7-Linux-BD-v2016.2/build/linux/kernel'

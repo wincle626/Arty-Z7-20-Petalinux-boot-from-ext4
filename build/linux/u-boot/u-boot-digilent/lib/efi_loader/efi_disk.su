@@ -1,0 +1,8 @@
+efi_disk.c:36:21:efi_disk_open_block	0	static
+efi_disk.c:47:21:efi_disk_open_dp	0	static
+efi_disk.c:180:28:efi_disk_flush_blocks	8	static
+efi_disk.c:58:28:efi_disk_reset	8	static
+efi_disk.c:70:28:efi_disk_rw_blocks.isra.4	48	static
+efi_disk.c:145:21:efi_disk_write_blocks	40	static
+efi_disk.c:110:21:efi_disk_read_blocks	40	static
+efi_disk.c:278:5:efi_disk_register	72	static

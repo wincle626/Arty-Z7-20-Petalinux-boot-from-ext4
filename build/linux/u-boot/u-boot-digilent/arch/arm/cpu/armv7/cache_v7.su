@@ -1,0 +1,13 @@
+cache_v7.c:213:6:invalidate_icache_all	0	static
+cache_v7.c:237:13:v7_outer_cache_enable	0	static
+cache_v7.c:238:13:v7_outer_cache_disable	0	static
+cache_v7.c:239:13:v7_outer_cache_flush_all	0	static
+cache_v7.c:143:6:flush_dcache_all	8	static
+cache_v7.c:240:13:v7_outer_cache_inval_all	0	static
+cache_v7.c:132:6:invalidate_dcache_all	8	static
+cache_v7.c:177:6:arm_init_before_mmu	8	static
+cache_v7.c:241:13:v7_outer_cache_flush_range	0	static
+cache_v7.c:168:6:flush_dcache_range	0	static
+cache_v7.c:184:6:mmu_page_table_flush	8	static
+cache_v7.c:242:13:v7_outer_cache_inval_range	0	static
+cache_v7.c:154:6:invalidate_dcache_range	24	static

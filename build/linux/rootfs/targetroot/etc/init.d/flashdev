@@ -1,0 +1,20 @@
+#!/bin/sh
+
+[ ! -f /proc/mtd ] && echo "/proc/mtd doesn't exist. Will not create /dev/flash/* device nodes" && exit 0
+
+# process mtd entries in /proc, and create symlinks in /dev/flash
+echo "Creating /dev/flash/* device nodes"
+mkdir -p /dev/flash
+rm -f /dev/flash/*
+
+while read line; do
+	dev=${line/:*/}
+	# skip header line of /proc/mtd
+	[ "${dev}" == "dev" ] && continue
+	# Extract the partition name, wish there was a one-liner for this
+	link=${line##* \"}
+	link=${link%%\"}
+	# cp -l on devnodes clones the node, not the contents
+	# this is what we want
+	cp -l /dev/${dev} "/dev/flash/${link}"
+done < /proc/mtd

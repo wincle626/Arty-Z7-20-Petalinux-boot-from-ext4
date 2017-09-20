@@ -1,0 +1,7 @@
+efi_runtime.c:78:28:efi_get_time	0	static
+efi_runtime.c:274:45:efi_unimplemented	0	static
+efi_runtime.c:279:45:efi_device_error	0	static
+efi_runtime.c:284:45:efi_invalid_parameter	0	static
+efi_runtime.c:58:20:efi_reset_system	8	static
+efi_runtime.c:174:6:efi_runtime_relocate	48	static
+efi_runtime.c:223:28:efi_set_virtual_address_map	16	static

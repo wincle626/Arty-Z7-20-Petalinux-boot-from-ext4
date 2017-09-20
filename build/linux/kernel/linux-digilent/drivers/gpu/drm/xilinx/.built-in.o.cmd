@@ -1,0 +1,1 @@
+cmd_drivers/gpu/drm/xilinx/built-in.o :=  arm-linux-gnueabihf-ld -EL    -r -o drivers/gpu/drm/xilinx/built-in.o drivers/gpu/drm/xilinx/xilinx_drm.o drivers/gpu/drm/xilinx/xilinx_drm_dp.o drivers/gpu/drm/xilinx/xilinx_drm_dp_sub.o drivers/gpu/drm/xilinx/dglnt_encoder.o 

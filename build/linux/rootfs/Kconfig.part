@@ -1,0 +1,38 @@
+menu "PetaLinux RootFS Settings"
+config ROOTFS_ROOT_PASSWD
+	string "Root password"
+	default ""
+	help
+	  Default login password for the 'root' user, on your PetaLinux system.
+
+comment "Service configuration"
+config ROOTFS_BUSYBOX_INETD_FTPD
+	bool "Enable busybox FTPD with inetd service"
+	select ROOTFS_PACKAGES_BUSYBOX_INETD
+	default 'y'
+	help
+	 Select this option to enable busybox ftpd with inetd service and
+	 run it on startup.
+
+config ROOTFS_BUSYBOX_INETD_TELNETD
+	bool "Enable busybox TELNETD with inetd service"
+	select ROOTFS_PACKAGES_BUSYBOX_INETD
+	default 'y'
+	help
+	 Select this option to enable busybox telnetd with inetd
+	 service and run it on startup.
+endmenu
+
+#############################################################################
+
+menu "Debugging"
+
+config USER_DEBUG
+	bool "build debugable applications"
+	help
+	 Build all user application with debug symbols and reduced optimisation
+	 levels.  See also debug build option in force library building.  Withou
+	 this option debug symbols are still included, however the optimisation
+	 level is increased and this can lead to problematic debugging.
+
+endmenu

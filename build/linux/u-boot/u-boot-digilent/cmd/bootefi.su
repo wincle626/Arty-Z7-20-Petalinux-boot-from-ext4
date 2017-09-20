@@ -1,0 +1,4 @@
+bootefi.c:54:21:bootefi_open_dp	0	static
+bootefi.c:145:22:do_bootefi_exec	408	static
+bootefi.c:221:12:do_bootefi	16	static
+bootefi.c:262:6:efi_set_bootdev	56	static

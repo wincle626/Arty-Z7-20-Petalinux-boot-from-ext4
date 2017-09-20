@@ -1,0 +1,14 @@
+zynq_gem.c:295:12:zynq_gem_setup_mac	16	static
+zynq_gem.c:580:13:zynq_gem_halt	8	static
+zynq_gem.c:555:12:zynq_gem_free_pkt	8	static
+zynq_gem.c:481:12:zynq_gem_send	24	static
+zynq_gem.c:363:12:zynq_gem_init	24	static
+zynq_gem.c:680:12:zynq_gem_ofdata_to_platdata	24	static
+zynq_gem.c:659:12:zynq_gem_remove	8	static
+zynq_gem.c:205:12:phy_setup_op.isra.2	8	static
+zynq_gem.c:618:12:zynq_gem_miiphy_write	24	static
+zynq_gem.c:526:12:zynq_gem_recv	8	static
+zynq_gem.c:606:12:zynq_gem_miiphy_read	24	static
+zynq_gem.c:627:12:zynq_gem_probe	40	static
+zynq_gem.c:589:12:zynq_board_read_rom_ethaddr	0	static
+zynq_gem.c:594:12:zynq_gem_read_rom_mac	8	static

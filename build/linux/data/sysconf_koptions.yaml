@@ -1,0 +1,110 @@
+selected_device:
+    flash:
+        is_valid_and:
+            SUBSYSTEM_FLASH_MANUAL_SELECT: n
+        linux_kernel_properties:
+            MTD: bool y
+            MTD_OF_PARTS: bool y
+    serial:
+        is_valid_and:
+            SUBSYSTEM_SERIAL_MANUAL_SELECT: n
+        linux_kernel_properties:
+            SERIAL_OF_PLATFORM: bool y
+    ethernet:
+        is_valid_and: SUBSYSTEM_ETHERNET_MANUAL_SELECT n
+        linux_kernel_properties:
+            NET: bool y
+            PACKET: bool y
+            UNIX: bool y
+            INET: bool y
+rootfs_type:
+    initramfs:
+        is_valid_and:
+            SUBSYSTEM_ROOTFS_INITRAMFS: y
+        linux_kernel_properties:
+            BLK_DEV_INITRD: bool y
+            INITRAMFS_COMPRESSION_NONE: bool y
+            INITRAMFS_SOURCE: string \"\${PROOT}/images/\${SUBSYSTEM}/rootfs.cpio\"
+            CONFIG_INITRAMFS_ROOT_UID: int 0
+            CONFIG_INITRAMFS_ROOT_GID: int 0
+    initrd:
+        is_valid_and:
+            SUBSYSTEM_ROOTFS_INITRD: y
+        linux_kernel_properties:
+            BLK_DEV_INITRD: bool y
+            CONFIG_RD_GZIP: bool y
+            INITRAMFS_SOURCE: string \"\"
+    nfs:
+        is_valid_and:
+            SUBSYSTEM_ROOTFS_NFS: y
+        linux_kernel_properties:
+            BLK_DEV_INITRD: bool n
+            NET: bool y
+            PACKET: bool y
+            UNIX: bool y
+            INET: bool y
+            IP_PNP: bool y
+            IP_PNP_DHCP: bool y
+            IP_PNP_BOOTP: bool y
+            IP_PNP_RARP: bool y
+            NETWORK_FILESYSTEMS: bool y
+            NFS_FS: bool y
+            NFS_V3: bool y
+            ROOT_NFS: bool y
+    jffs2:
+        is_valid_and:
+            SUBSYSTEM_ROOTFS_JFFS2: y
+        linux_kernel_properties:
+            BLK_DEV_INITRD: bool n
+            MISC_FILESYSTEMS: bool y
+            JFFS2_FS: bool y
+            JFFS2_FS_WRITEBUFFER: bool y
+            JFFS2_SUMMARY: bool y
+            JFFS2_COMPRESSION_OPTIONS: bool y
+            JFFS2_ZLIB: bool y
+            JFFS2_LZO: bool y
+            JFFS2_RTIME: bool y
+            JFFS2_RUBIN: bool y
+            JFFS2_CMODE_PRIORITY: bool y
+            MTD: bool y
+            MTD_OF_PARTS: bool y
+            MTD_CHAR: bool y
+            MTD_CFI: bool y
+            MTD_JEDECPROBE: bool y
+            MTD_GEN_PROBE: bool y
+            MTD_CFI_ADV_OPTIONS: bool y
+            MTD_MAP_BANK_WIDTH_1: bool y
+            MTD_MAP_BANK_WIDTH_2: bool y
+            MTD_MAP_BANK_WIDTH_4: bool y
+            MTD_CFI_I1: bool y
+            MTD_CFI_I2: bool y
+            MTD_CFI_INTELEXT: bool y
+            MTD_CFI_AMDSTD: bool y
+            MTD_CFI_STAA: bool y
+            MTD_CFI_UTIL: bool y
+            MTD_COMPLEX_MAPPINGS: bool y
+            MTD_PHYSMAP: bool y
+            MTD_PHYSMAP_OF: bool y
+    sd:
+        is_valid_and:
+            SUBSYSTEM_ROOTFS_SD: y
+        linux_kernel_properties:
+            BLK_DEV_INITRD: bool n
+            BLOCK: bool y
+            SCSI: bool y
+            BLK_DEV_SD: bool y
+            MMC: bool y
+            MMC_BLOCK: bool y
+            MMC_SDHCI: bool y
+            MMC_SDHCI_PLTFM: bool y
+            EXT2_FS: bool y
+            EXT3_FS: bool y
+            EXT4_FS: bool y
+            VFAT_FS: bool y
+            MSDOS_FS: bool y
+oprofile:
+    is_valid_and:
+        ROOTFS_PACKAGES_OPROFILE: y rootfs
+    linux_kernel_properties:
+        PROFILING: bool y
+        OPROFILE: bool y
